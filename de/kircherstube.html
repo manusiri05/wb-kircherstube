@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TDN8CNCC');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Kircherstube – Pizzeria, Café & Terrasse in Barbian Südtirol</title>
+  <meta name="description" content="Holzofenpizza, hausgemachtes Eis, Barista-Kaffee und Törggelen auf der Panorama-Terrasse der Kircherstube Barbian. Geöffnet durchgehend, Pizzeria ab 16 Uhr." />
+  <meta name="keywords" content="Pizzeria Barbian, Holzofenpizza Südtirol, Café Barbian, Törggelen Eisacktal, Panorama-Terrasse Kircherstube, Restaurant Barbian" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #F7F3EE;
+      --bg-cream:     #F2EDE6;
+      --bg-dark:      #1C3A2E;
+      --white:        #FFFFFF;
+      --text:         #1C1C1A;
+      --text-mid:     #3D3830;
+      --text-light:   #6B6355;
+      --text-xlight:  #9B9186;
+      --green:        #2D7A4F;
+      --green-btn:    #48866C;
+      --green-light:  #8BAF95;
+      --green-muted:  #B8C9BC;
+      --green-border: #2D5A40;
+      --red-day:      #E8635A;
+      --border:       #EDE8E0;
+      --font-serif:   'Playfair Display', Georgia, serif;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --max-w:        1100px;
+      --pad:          80px 40px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--text); background: var(--white); }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 100; }
+
+    /* ═══════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════ */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 72px; display: flex; align-items: center;
+      background: rgba(255,255,255,0);
+      transition: background .4s, box-shadow .4s;
+    }
+    #site-header.scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 24px rgba(28,28,26,.08);
+    }
+    .header-inner {
+      max-width: var(--max-w); width: 100%;
+      margin-inline: auto; padding-inline: 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; flex: 1; }
+    .logo-img { height: 46px; width: auto; transition: filter .4s; }
+    #site-header:not(.scrolled) .logo-img { filter: brightness(0) invert(1); }
+    #site-header.scrolled       .logo-img { filter: none; }
+
+    .main-nav { display: flex; align-items: center; gap: 28px; }
+    .main-nav a {
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none;
+      color: rgba(255,255,255,.88); transition: color .3s;
+    }
+    #site-header.scrolled .main-nav a { color: var(--text-light); }
+    .main-nav a:hover { color: var(--white); }
+    #site-header.scrolled .main-nav a:hover { color: var(--green); }
+    .main-nav a.active-page { color: var(--white); border-bottom: 1px solid rgba(255,255,255,.5); }
+    #site-header.scrolled .main-nav a.active-page { color: var(--green); border-bottom-color: var(--green); }
+
+    .nav-book {
+      display: inline-flex; align-items: center;
+      padding: 9px 20px; background: var(--green);
+      color: var(--white) !important;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none; border-bottom: none !important;
+      transition: background .25s;
+    }
+    .nav-book:hover { background: var(--green-btn) !important; }
+
+    /* Language switcher */
+    .lang-switch {
+      display: flex; align-items: center; gap: 2px;
+      margin-left: 12px; padding-left: 16px;
+      border-left: 1px solid rgba(255,255,255,.3);
+    }
+    #site-header.scrolled .lang-switch { border-left-color: #DDD8D0; }
+    .lang-btn {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+      text-decoration: none; padding: 3px 6px; border-radius: 2px;
+      color: rgba(255,255,255,.6); transition: color .3s, background .3s;
+    }
+    .lang-btn.active { color: var(--white); }
+    .lang-btn:hover  { color: var(--white); }
+    #site-header.scrolled .lang-btn        { color: var(--text-light); }
+    #site-header.scrolled .lang-btn.active { color: var(--green); background: rgba(45,122,79,.08); }
+    #site-header.scrolled .lang-btn:hover  { color: var(--green); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span { width: 24px; height: 2px; display: block; background: var(--white); transition: background .3s; }
+    #site-header.scrolled .hamburger span { background: var(--text); }
+
+    /* Mobile Nav */
+    .mobile-nav {
+      position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--white); z-index: 199;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 32px;
+      transform: translateY(-110%); opacity: 0;
+      transition: transform .4s ease, opacity .4s ease;
+      pointer-events: none;
+    }
+    .mobile-nav.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+    .mobile-nav a {
+      font-size: 22px; font-weight: 400; color: var(--text);
+      text-decoration: none; letter-spacing: .03em; transition: color .2s;
+    }
+    .mobile-nav a:hover { color: var(--green); }
+    .mobile-nav .nav-book { font-size: 13px; padding: 14px 40px; margin-top: 4px; }
+    .mobile-lang { display: flex; gap: 16px; margin-top: 4px; }
+    .mobile-lang a { font-size: 14px !important; font-weight: 600; }
+    .mobile-lang a.active { color: var(--green) !important; }
+
+    /* ═══════════════════════════════════════════
+       HERO — nur Bild, kein Card
+    ═══════════════════════════════════════════ */
+    #hero {
+      position: relative; height: 100vh; min-height: 580px; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image: url('/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg');
+      background-size: cover; background-position: center 40%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 60%, rgba(0,0,0,0) 100%);
+    }
+
+    /* ═══════════════════════════════════════════
+       KE-STATS
+    ═══════════════════════════════════════════ */
+    .ke-stats {
+      background: var(--bg-dark);
+      display: grid; grid-template-columns: repeat(3,1fr);
+    }
+    .ke-stat {
+      padding: 28px 40px; border-right: 1px solid var(--green-border);
+      text-align: center;
+    }
+    .ke-stat:last-child { border-right: none; }
+    .ke-stat-label {
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--green-light); margin-bottom: 6px; font-family: var(--font-sans);
+    }
+    .ke-stat-value { font-size: 14px; color: #F7F3EE; font-weight: 500; font-family: var(--font-sans); }
+    .ke-stat-value.red { color: var(--red-day); }
+
+    /* ═══════════════════════════════════════════
+       KE-PIZZA
+    ═══════════════════════════════════════════ */
+    .ke-pizza {
+      padding: 80px 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center; background: var(--white);
+      max-width: 100%;
+    }
+    .ke-pizza-inner { max-width: var(--max-w); margin: 0 auto; }
+    .ke-pizza-text .overline {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green-btn); font-weight: 500; display: block;
+      margin-bottom: 16px; font-family: var(--font-sans);
+    }
+    .ke-pizza-text h2 {
+      font-size: 44px; line-height: 1.1; color: var(--text);
+      margin-bottom: 24px; font-weight: 100;
+    }
+    .ke-pizza-text p {
+      font-size: 15px; line-height: 1.7; color: #4A4540; margin-bottom: 32px;
+    }
+    .ke-pizza-text a {
+      font-size: 12px; color: var(--green-btn); text-decoration: none;
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+      border-bottom: 1px solid var(--green-btn); padding-bottom: 2px;
+      font-family: var(--font-sans);
+    }
+    .ke-pizza-imgs img:first-child {
+      width: 100%; height: 340px; object-fit: cover; display: block;
+    }
+    .ke-pizza-imgs img:last-child {
+      width: 160px; height: 120px; object-fit: cover; display: block;
+      margin-left: auto; margin-top: -60px; border: 4px solid var(--white);
+    }
+
+    /* ═══════════════════════════════════════════
+       KE-TERRASSE
+    ═══════════════════════════════════════════ */
+    .ke-terrasse {
+      background: var(--bg); padding: 80px 60px; text-align: center;
+    }
+    .ke-terrasse h2 {
+      font-size: 48px; color: var(--text); margin-bottom: 8px; font-weight: 100;
+    }
+    .ke-terrasse h2 em { font-style: italic; }
+    .ke-terrasse .sub {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green-btn); font-weight: 500; margin-bottom: 48px;
+      display: block; font-family: var(--font-sans);
+    }
+    .ke-terrasse-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .ke-terrasse-card { position: relative; overflow: hidden; }
+    .ke-terrasse-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+    .ke-terrasse-card-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      padding: 40px 20px 20px;
+    }
+    .ke-terrasse-card-label h3 {
+      font-size: 18px; color: #fff; margin-bottom: 4px; font-weight: 100;
+    }
+    .ke-terrasse-card-label p { font-size: 12px; color: rgba(255,255,255,0.8); }
+
+    /* ═══════════════════════════════════════════
+       KE-TOERG
+    ═══════════════════════════════════════════ */
+    .ke-toerg { background: var(--bg); padding: 80px 60px; }
+    .ke-toerg-inner {
+      background: #FDFBEC; padding: 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: var(--max-w); margin: 0 auto;
+    }
+    .ke-toerg-badge {
+      display: inline-block; background: var(--green-btn); color: #fff;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 12px; margin-bottom: 20px; font-family: var(--font-sans);
+    }
+    .ke-toerg-inner h2 {
+      font-size: 44px; line-height: 1.1; color: var(--text);
+      font-style: italic; margin-bottom: 24px; font-weight: 100;
+    }
+    .ke-toerg-inner > div > p {
+      font-size: 15px; line-height: 1.7; color: #4A4540; margin-bottom: 40px;
+    }
+    .ke-toerg-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .ke-toerg-col h4 {
+      font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 8px;
+      font-family: var(--font-sans);
+    }
+    .ke-toerg-col p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+    .ke-toerg-btn {
+      display: inline-block; background: var(--bg-dark); color: #FDFBEC;
+      padding: 14px 32px; font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none; margin-top: 32px;
+      font-family: var(--font-sans); transition: background .25s;
+    }
+    .ke-toerg-btn:hover { background: var(--green-border); }
+
+    /* ═══════════════════════════════════════════
+       KE-KONTAKT
+    ═══════════════════════════════════════════ */
+    .ke-kontakt { background: var(--bg-dark); padding: 80px 60px; }
+    .ke-kontakt-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    }
+    .ke-kontakt h2 {
+      font-size: 36px; color: #F7F3EE; margin-bottom: 32px; font-weight: 100;
+    }
+    .ke-kontakt-info { display: flex; flex-direction: column; gap: 16px; }
+    .ke-kontakt-row { display: flex; gap: 12px; align-items: flex-start; }
+    .ke-kontakt-row .icon {
+      color: var(--green-light); font-size: 13px; font-weight: 600;
+      min-width: 20px; margin-top: 2px;
+    }
+    .ke-kontakt-row p { font-size: 14px; color: var(--green-muted); line-height: 1.6; }
+    .ke-kontakt-row a { color: var(--green-muted); text-decoration: none; transition: color .2s; }
+    .ke-kontakt-row a:hover { color: #F7F3EE; }
+    .ke-kontakt-map-wrap iframe {
+      width: 100%; height: 320px; border: 0; display: block;
+      filter: grayscale(20%) contrast(1.05);
+    }
+
+    /* ═══════════════════════════════════════════
+       MAP (global, nach Footer)
+    ═══════════════════════════════════════════ */
+    .kircher-map iframe { width: 100%; height: 400px; border: 0; display: block; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    #footer { background: var(--white); border-top: 1px solid #E8E2DA; padding: 72px 40px 0; }
+    .footer-grid {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 56px;
+    }
+    .footer-logo-wrap { text-decoration: none; display: inline-block; margin-bottom: 18px; }
+    .footer-logo-img  { height: 40px; width: auto; }
+    .footer-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+    .footer-col-label {
+      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--text-light); font-weight: 500; margin-bottom: 16px;
+      font-family: var(--font-sans);
+    }
+    .footer-col p { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin: 0; }
+    .footer-col a { text-decoration: none; color: var(--text-mid); transition: color .2s; }
+    .footer-col a:hover { color: var(--green); }
+    .footer-hours-sub { font-size: 12px; color: var(--text-light); }
+    .footer-rest-day  { font-size: 12px; color: var(--red-day); }
+    .footer-legal-link {
+      display: block; font-size: 13px; color: var(--text-mid);
+      text-decoration: none; margin-top: 8px; transition: color .2s;
+    }
+    .footer-legal-link:hover { color: var(--green); }
+    .footer-bottom {
+      max-width: var(--max-w); margin: 0 auto;
+      border-top: 1px solid #E8E2DA;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; font-size: 12px; color: var(--text-light);
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: var(--text-light); text-decoration: none; transition: color .2s; }
+    .footer-bottom-links a:hover { color: var(--green); }
+
+    /* ═══════════════════════════════════════════
+       UTILITIES
+    ═══════════════════════════════════════════ */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .ke-pizza { padding: 80px 40px; }
+      .ke-terrasse { padding: 80px 40px; }
+      .ke-toerg { padding: 80px 40px; }
+      .ke-kontakt { padding: 80px 40px; }
+    }
+    @media (max-width: 900px) {
+      .main-nav  { display: none; }
+      .hamburger { display: flex; }
+      .ke-pizza { grid-template-columns: 1fr; padding: 60px 30px; gap: 40px; }
+      .ke-pizza-imgs img:last-child { margin-top: 0; }
+      .ke-terrasse-grid { grid-template-columns: 1fr; }
+      .ke-toerg-inner { grid-template-columns: 1fr; }
+      .ke-toerg-cols { grid-template-columns: 1fr; }
+      .ke-kontakt-inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 768px) {
+      :root { --pad: 60px 24px; }
+      .header-inner { padding-inline: 24px; }
+      .ke-pizza { padding: 60px 24px; }
+      .ke-terrasse { padding: 60px 24px; }
+      .ke-terrasse h2 { font-size: 30px; }
+      .ke-toerg { padding: 40px 20px; }
+      .ke-toerg-inner { padding: 32px 24px; }
+      .ke-toerg-inner h2 { font-size: 30px; }
+      .ke-kontakt { padding: 60px 20px; }
+      .ke-kontakt-map-wrap iframe { height: 260px; }
+      #footer { padding: 56px 24px 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+    @media (max-width: 600px) {
+      .ke-stats { grid-template-columns: 1fr; }
+      .ke-stat { border-right: none; border-bottom: 1px solid var(--green-border); }
+      .ke-stat:last-child { border-bottom: none; }
+    }
+    @media (max-width: 480px) {
+      :root { --pad: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDN8CNCC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/de" class="logo">
+      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img">
+    </a>
+
+    <nav class="main-nav">
+      <a href="/de">Home</a>
+      <a href="/de/wohnen">Unterkunft</a>
+      <a href="/de/kircherstube" class="active-page">Kircherstube</a>
+      <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
+      <a href="/de/anfrage">Anfrage</a>
+      <a href="/de/buchen" class="nav-book">Buchen</a>
+      <div class="lang-switch">
+        <a href="/de/kircherstube" class="lang-btn active">DE</a>
+        <a href="/it/kircherstube" class="lang-btn">IT</a>
+        <a href="/en/kircherstube" class="lang-btn">EN</a>
+      </div>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="/de">Home</a>
+  <a href="/de/wohnen">Unterkunft</a>
+  <a href="/de/kircherstube" style="color:var(--green);">Kircherstube</a>
+  <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
+  <a href="/de/anfrage">Anfrage</a>
+  <a href="/de/buchen" class="nav-book">Buchen</a>
+  <div class="mobile-lang">
+    <a href="/de/kircherstube" class="active">DE</a>
+    <a href="/it/kircherstube">IT</a>
+    <a href="/en/kircherstube">EN</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO — nur Bild, kein Text
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     STATS BAR
+═══════════════════════════════════════════ -->
+<div class="ke-stats fade-in">
+  <div class="ke-stat">
+    <div class="ke-stat-label">Durchgehend</div>
+    <div class="ke-stat-value">Café, Kuchen &amp; Eis</div>
+  </div>
+  <div class="ke-stat">
+    <div class="ke-stat-label">Ruhetag</div>
+    <div class="ke-stat-value red">Jeden Dienstag</div>
+  </div>
+  <div class="ke-stat">
+    <div class="ke-stat-label">Pizzeria</div>
+    <div class="ke-stat-value">16:00 – 21:45 Uhr</div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HOLZOFENPIZZA
+═══════════════════════════════════════════ -->
+<section class="ke-pizza fade-in">
+  <div class="ke-pizza-text">
+    <span class="overline">Ofenwarm &amp; Knusprig</span>
+    <h2>Holzofenpizza</h2>
+    <p>Frische Zutaten direkt von den Bergbauern in nächster Umgebung.</p>
+    <a href="/de/anfrage">Speisekarte entdecken</a>
+  </div>
+  <div class="ke-pizza-imgs">
+    <img src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png" alt="Kircherstube Pizza" loading="lazy">
+    <img src="/assets/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.png" alt="Pizzaiolo" loading="lazy">
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TERRASSE — EIS, KAFFEE & DOLOMITENBLICK
+═══════════════════════════════════════════ -->
+<section class="ke-terrasse fade-in">
+  <h2>Eis, Kaffee &amp; <em>Dolomitenblick.</em></h2>
+  <span class="sub">Panorama-Terrasse über dem Eisacktal</span>
+  <div class="ke-terrasse-grid">
+    <div class="ke-terrasse-card">
+      <img src="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" alt="Panorama Terrasse" loading="lazy">
+      <div class="ke-terrasse-card-label">
+        <h3>Die Panorama-Terrasse</h3>
+        <p>Der Logenplatz über dem Eisacktal.</p>
+      </div>
+    </div>
+    <div class="ke-terrasse-card">
+      <img src="/assets/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.png" alt="Hausgemachtes Eis" loading="lazy">
+      <div class="ke-terrasse-card-label">
+        <h3>Hausgemachtes Eis</h3>
+        <p>Cremige Vielfalt aus Südtiroler Milch.</p>
+      </div>
+    </div>
+    <div class="ke-terrasse-card">
+      <img src="/assets/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.png" alt="Barista Kultur" loading="lazy">
+      <div class="ke-terrasse-card-label">
+        <h3>Barista Kultur</h3>
+        <p>Italienischer Espresso am Berghang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TÖRGGELEN
+═══════════════════════════════════════════ -->
+<section class="ke-toerg fade-in">
+  <div class="ke-toerg-inner">
+    <div>
+      <span class="ke-toerg-badge">Herbst Highlight</span>
+      <h2>Zeit zum Törggelen.</h2>
+      <p>Schlachtplatte und geröstete Kastanien. Wenn sich die Blätter verfärben, wird es in der Kircherstube besonders gesellig.</p>
+      <div class="ke-toerg-cols">
+        <div class="ke-toerg-col">
+          <h4>Traditionelle Kost</h4>
+          <p>Hausgemachte Schlutzkrapfen, Surfeisch und Kraut.</p>
+        </div>
+        <div class="ke-toerg-col">
+          <h4>Neuer Wein</h4>
+          <p>Frisch gepresster Süßmost und junger Südtiroler Wein.</p>
+        </div>
+      </div>
+      <a href="/de/anfrage" class="ke-toerg-btn">Tisch reservieren</a>
+    </div>
+    <div>
+      <img src="/assets/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy">
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     KONTAKT
+═══════════════════════════════════════════ -->
+<section class="ke-kontakt fade-in">
+  <div class="ke-kontakt-inner">
+    <div>
+      <h2>Finden Sie uns.</h2>
+      <div class="ke-kontakt-info">
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p>Rosengartenstraße 27<br>39040 Barbian, Südtirol</p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p><a href="tel:+390471650074">+39 0471 650 074</a></p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p><a href="mailto:info@kircherstube.it">info@kircherstube.it</a></p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p>Durchgehend geöffnet 08:00–21:45<br>
+          <span style="color:#E8635A;">Dienstag: Ruhetag</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="ke-kontakt-map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=Kircherstube+Barbian+Südtirol+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Kircherstube Barbian auf Google Maps">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     GOOGLE MAP (Vollbreite)
+═══════════════════════════════════════════ -->
+<div class="kircher-map">
+  <iframe
+    src="https://maps.google.com/maps?q=Kircherstube+Barbian+Südtirol+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed"
+    allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    title="Kircherstube Barbian auf Google Maps">
+  </iframe>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-grid">
+
+    <div>
+      <a href="/de" class="footer-logo-wrap">
+        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img">
+      </a>
+      <p class="footer-desc">Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof &amp; Pizzeria in Barbian.</p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Öffnungszeiten</p>
+      <p>
+        Mo, Mi–So<br>
+        Durchgehend geöffnet<br>
+        <span class="footer-hours-sub">Frühstück 08:00–10:00</span><br>
+        <span class="footer-hours-sub">Pizzeria 16:00–21:45</span><br>
+        <span class="footer-rest-day">Dienstag: Ruhetag</span>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Kontakt</p>
+      <p>
+        <a href="tel:+390471650074">+39 0471 650 074</a><br>
+        <a href="mailto:info@kircherstube.it">info@kircherstube.it</a><br><br>
+        Rosengartenstraße 27<br>
+        39040 Barbian (BZ)<br>
+        Südtirol, Italien
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Rechtliches</p>
+      <p>
+        MwSt-Nr.: IT 01193170212<br>
+        CIN: ITO21007A1Y92M2ERT
+      </p>
+      <a href="/de/impressum"   class="footer-legal-link">Impressum</a>
+      <a href="/de/datenschutz" class="footer-legal-link">Datenschutz</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Kircherstube Barbian. Website by Out of The Box Media.</span>
+    <div class="footer-bottom-links">
+      <a href="/de/impressum">Impressum</a>
+      <a href="/de/datenschutz">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════ -->
+<script>
+  /* ── Header scroll ── */
+  const header = document.getElementById('site-header');
+  const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mobileNav.classList.remove('open'))
+  );
+
+  /* ── Fade-in ── */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
