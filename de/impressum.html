@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TDN8CNCC');</script>
+  <!-- End Google Tag Manager -->
+
+  <title>Impressum | Kircherstube Barbian Südtirol</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="icon" href="/assets/favicon.png" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #F7F3EE;
+      --bg-dark:      #1C3A2E;
+      --white:        #FFFFFF;
+      --text:         #1C1C1A;
+      --text-mid:     #3D3830;
+      --text-light:   #6B6355;
+      --text-xlight:  #9B9186;
+      --green:        #2D7A4F;
+      --green-btn:    #48866C;
+      --green-light:  #8BAF95;
+      --green-muted:  #B8C9BC;
+      --green-border: #2D5A40;
+      --red-day:      #E8635A;
+      --border:       #EDE8E0;
+      --font-serif:   'Playfair Display', Georgia, serif;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --max-w:        1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--text); background: var(--white); }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 100; }
+
+    /* ═══════════════════════════════════════════
+       HEADER
+    ═══════════════════════════════════════════ */
+    #site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      height: 72px; display: flex; align-items: center;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 1px 24px rgba(28,28,26,.08);
+    }
+    .header-inner {
+      max-width: var(--max-w); width: 100%;
+      margin-inline: auto; padding-inline: 40px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; text-decoration: none; flex: 1; }
+    .logo-img { height: 46px; width: auto; }
+
+    .main-nav { display: flex; align-items: center; gap: 28px; }
+    .main-nav a {
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none;
+      color: var(--text-light); transition: color .3s;
+    }
+    .main-nav a:hover { color: var(--green); }
+
+    .nav-book {
+      display: inline-flex; align-items: center;
+      padding: 9px 20px; background: var(--green);
+      color: var(--white) !important;
+      font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      font-weight: 500; text-decoration: none;
+      transition: background .25s;
+    }
+    .nav-book:hover { background: var(--green-btn) !important; }
+
+    .lang-switch {
+      display: flex; align-items: center; gap: 2px;
+      margin-left: 12px; padding-left: 16px;
+      border-left: 1px solid #DDD8D0;
+    }
+    .lang-btn {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+      text-decoration: none; padding: 3px 6px; border-radius: 2px;
+      color: var(--text-light); transition: color .3s, background .3s;
+    }
+    .lang-btn.active { color: var(--green); background: rgba(45,122,79,.08); }
+    .lang-btn:hover  { color: var(--green); }
+
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 4px; background: none; border: none;
+    }
+    .hamburger span { width: 24px; height: 2px; display: block; background: var(--text); }
+
+    .mobile-nav {
+      position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
+      background: var(--white); z-index: 199;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; gap: 32px;
+      transform: translateY(-110%); opacity: 0;
+      transition: transform .4s ease, opacity .4s ease;
+      pointer-events: none;
+    }
+    .mobile-nav.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+    .mobile-nav a {
+      font-size: 22px; font-weight: 400; color: var(--text);
+      text-decoration: none; letter-spacing: .03em; transition: color .2s;
+    }
+    .mobile-nav a:hover { color: var(--green); }
+    .mobile-nav .nav-book { font-size: 13px; padding: 14px 40px; margin-top: 4px; }
+    .mobile-lang { display: flex; gap: 16px; margin-top: 4px; }
+    .mobile-lang a { font-size: 14px !important; font-weight: 600; }
+    .mobile-lang a.active { color: var(--green) !important; }
+
+    /* ═══════════════════════════════════════════
+       CONTENT
+    ═══════════════════════════════════════════ */
+    .legal-content {
+      max-width: 800px; margin: 0 auto;
+      padding: 120px 40px 80px;
+      line-height: 1.8;
+    }
+    .legal-content h1 {
+      font-size: 42px; margin-bottom: 48px; font-weight: 100;
+    }
+    .legal-content h2 {
+      font-family: var(--font-sans);
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--green-btn); font-weight: 500;
+      margin-bottom: 16px; margin-top: 40px;
+    }
+    .legal-content p {
+      font-size: 15px; color: var(--text-mid); line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .legal-content a { color: var(--green-btn); text-decoration: none; }
+    .legal-content a:hover { text-decoration: underline; }
+    .legal-content strong { font-weight: 600; }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    #footer { background: var(--white); border-top: 1px solid #E8E2DA; padding: 72px 40px 0; }
+    .footer-grid {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
+      padding-bottom: 56px;
+    }
+    .footer-logo-wrap { text-decoration: none; display: inline-block; margin-bottom: 18px; }
+    .footer-logo-img  { height: 40px; width: auto; }
+    .footer-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
+    .footer-col-label {
+      font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--text-light); font-weight: 500; margin-bottom: 16px;
+      font-family: var(--font-sans);
+    }
+    .footer-col p { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin: 0; }
+    .footer-col a { text-decoration: none; color: var(--text-mid); transition: color .2s; }
+    .footer-col a:hover { color: var(--green); }
+    .footer-hours-sub { font-size: 12px; color: var(--text-light); }
+    .footer-rest-day  { font-size: 12px; color: var(--red-day); }
+    .footer-legal-link {
+      display: block; font-size: 13px; color: var(--text-mid);
+      text-decoration: none; margin-top: 8px; transition: color .2s;
+    }
+    .footer-legal-link:hover { color: var(--green); }
+    .footer-bottom {
+      max-width: var(--max-w); margin: 0 auto;
+      border-top: 1px solid #E8E2DA;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; font-size: 12px; color: var(--text-light);
+    }
+    .footer-bottom-links { display: flex; gap: 24px; }
+    .footer-bottom-links a { color: var(--text-light); text-decoration: none; transition: color .2s; }
+    .footer-bottom-links a:hover { color: var(--green); }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .main-nav  { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 768px) {
+      .header-inner { padding-inline: 24px; }
+      .legal-content { padding: 104px 24px 60px; }
+      .legal-content h1 { font-size: 32px; }
+      #footer { padding: 56px 24px 0; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TDN8CNCC"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header id="site-header">
+  <div class="header-inner">
+    <a href="/de" class="logo">
+      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img">
+    </a>
+
+    <nav class="main-nav">
+      <a href="/de">Home</a>
+      <a href="/de/wohnen">Unterkunft</a>
+      <a href="/de/kircherstube">Kircherstube</a>
+      <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
+      <a href="/de/anfrage">Anfrage</a>
+      <a href="/de/buchen" class="nav-book">Buchen</a>
+      <div class="lang-switch">
+        <a href="/de/impressum" class="lang-btn active">DE</a>
+        <a href="/it/impressum" class="lang-btn">IT</a>
+        <a href="/en/impressum" class="lang-btn">EN</a>
+      </div>
+    </nav>
+
+    <button class="hamburger" id="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav">
+  <a href="/de">Home</a>
+  <a href="/de/wohnen">Unterkunft</a>
+  <a href="/de/kircherstube">Kircherstube</a>
+  <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
+  <a href="/de/anfrage">Anfrage</a>
+  <a href="/de/buchen" class="nav-book">Buchen</a>
+  <div class="mobile-lang">
+    <a href="/de/impressum" class="active">DE</a>
+    <a href="/it/impressum">IT</a>
+    <a href="/en/impressum">EN</a>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════
+     CONTENT
+═══════════════════════════════════════════ -->
+<main class="legal-content">
+  <h1>Impressum</h1>
+
+  <h2>Angaben gemäß § 5 TMG / Art. 2 D.Lgs. 70/2003</h2>
+  <p>Fink Johanna<br>
+  Kircherstube<br>
+  Rosengartenstraße 27<br>
+  39040 Barbian (BZ)<br>
+  Südtirol, Italien</p>
+
+  <h2>Kontakt</h2>
+  <p>Telefon: <a href="tel:+390471650074">+39 0471 650 074</a><br>
+  E-Mail: <a href="mailto:info@kircherstube.it">info@kircherstube.it</a></p>
+
+  <h2>Steuerliche Angaben</h2>
+  <p>MwSt.-Nr.: IT 01493170212<br>
+  Steuernummer: FNKJNN64R66A952T<br>
+  CIN: IT021007A1Y92M2ERT</p>
+
+  <h2>Zuständige Aufsichtsbehörde</h2>
+  <p>Gemeinde Barbian / Comune di Barbiano<br>
+  Autonome Provinz Bozen – Südtirol</p>
+
+  <h2>Website &amp; Marketing</h2>
+  <p>Konzeption, Gestaltung und Umsetzung dieser Website sowie digitales Marketing:<br><br>
+  <strong>Out of The Box Media</strong><br>
+  <a href="https://www.outofthebox-media.com" target="_blank">www.outofthebox-media.com</a></p>
+
+  <h2>Haftungsausschluss</h2>
+  <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden. Als Diensteanbieter sind wir gemäß den geltenden gesetzlichen Bestimmungen für eigene Inhalte auf diesen Seiten verantwortlich. Wir sind jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen.</p>
+
+  <h2>Urheberrecht</h2>
+  <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+  <h2>Streitschlichtung</h2>
+  <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+</main>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-grid">
+
+    <div>
+      <a href="/de" class="footer-logo-wrap">
+        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img">
+      </a>
+      <p class="footer-desc">Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof &amp; Pizzeria in Barbian.</p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Öffnungszeiten</p>
+      <p>
+        Mo, Mi–So<br>
+        Durchgehend geöffnet<br>
+        <span class="footer-hours-sub">Frühstück 08:00–10:00</span><br>
+        <span class="footer-hours-sub">Pizzeria 16:00–21:45</span><br>
+        <span class="footer-rest-day">Dienstag: Ruhetag</span>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Kontakt</p>
+      <p>
+        <a href="tel:+390471650074">+39 0471 650 074</a><br>
+        <a href="mailto:info@kircherstube.it">info@kircherstube.it</a><br><br>
+        Rosengartenstraße 27<br>
+        39040 Barbian (BZ)<br>
+        Südtirol, Italien
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-label">Rechtliches</p>
+      <p>
+        MwSt-Nr.: IT 01193170212<br>
+        CIN: ITO21007A1Y92M2ERT
+      </p>
+      <a href="/de/impressum"   class="footer-legal-link">Impressum</a>
+      <a href="/de/datenschutz" class="footer-legal-link">Datenschutz</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Kircherstube Barbian. Website by Out of The Box Media.</span>
+    <div class="footer-bottom-links">
+      <a href="/de/impressum">Impressum</a>
+      <a href="/de/datenschutz">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  hamburger.addEventListener('click', () => {
+    const open = mobileNav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileNav.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => mobileNav.classList.remove('open'))
+  );
+</script>
+
+</body>
+</html>
