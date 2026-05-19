@@ -23,7 +23,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,7 +52,7 @@
     body { font-family: var(--font-sans); color: var(--text); background: var(--white); }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 100; }
 
     /* ═══════════════════════════════════════════
        HEADER
@@ -75,7 +75,7 @@
     }
 
     /* Logo */
-    .logo { display: flex; align-items: center; text-decoration: none; }
+    .logo { display: flex; align-items: center; text-decoration: none; flex: 1; }
     .logo-img { height: 46px; width: auto; transition: filter .4s; }
     /* Transparent (auf Hero): Logo weiß */
     #site-header:not(.scrolled) .logo-img { filter: brightness(0) invert(1); }
@@ -163,7 +163,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       /* ↓ Hero-Bild nach GitHub-Upload hier eintragen, z.B. /assets/hero.jpg */
-      background-image: url('/assets/hero.jpg');
+      background-image: url('/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg');
       background-size: cover; background-position: center 35%;
     }
     .hero-overlay {
