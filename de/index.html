@@ -20,7 +20,7 @@
   <meta property="og:description" content="Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof & Pizzeria in Barbian." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
-  <link rel="preload" as="image" href="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/hero_schlern.jpg" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -164,7 +164,7 @@
     .hero-bg {
       position: absolute; inset: 0;
       /* ↓ Hero-Bild nach GitHub-Upload hier eintragen, z.B. /assets/hero.jpg */
-      background-image: url('/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg');
+      background-image: url('/assets/hero_schlern.jpg');
       background-size: cover; background-position: center 35%;
     }
     .hero-overlay {
@@ -443,30 +443,48 @@
       :root { --pad: 60px 24px; }
       .header-inner { padding-inline: 24px; }
 
-      /* Hero */
-      #hero { align-items: flex-end; }
+      /* Mobile Hero: Bild, zwei CTAs und Headline */
+      #hero {
+        height: 100svh; min-height: 560px; align-items: flex-end;
+      }
+      .hero-bg { background-position: center center; }
+      .hero-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(0,0,0,.04) 35%,
+          rgba(0,0,0,.12) 58%,
+          rgba(0,0,0,.72) 100%
+        );
+      }
       .hero-card {
-        width: 100%; margin-left: 0;
-        padding: 20px 20px 28px;
+        display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+        width: 100%; margin: 0; padding: 0 20px 28px;
+        background: transparent;
       }
-      .hero-card-h1 { font-size: 34px; }
-
-      /* Mobile: Pizzeria-Logo ausblenden */
-      .hero-card-pizzeria { display: none; }
-
-      /* Mobile: Anruf-Button → schlanker Text-Link ohne Hintergrund */
+      .hero-card-pizzeria,
+      .hero-card-btn-secondary,
+      .hero-card-divider,
+      .hero-card-label,
+      .hero-card-desc,
+      .hero-card-link { display: none !important; }
+      .hero-card-actions { display: contents; }
+      .hero-menu-btn,
       .hero-card-btn {
-        background: none !important;
-        color: var(--green) !important;
-        padding: 0 !important;
-        margin-bottom: 16px;
-        font-size: 12px;
-        letter-spacing: 1.5px;
-        border-bottom: 1px solid var(--green);
-        display: inline-flex;
+        display: flex !important; align-items: center; justify-content: center;
+        width: 100%; min-height: 48px; margin: 0 !important;
+        padding: 13px 10px !important;
+        background: rgba(28,58,46,.88) !important;
+        border: 1px solid rgba(255,255,255,.72) !important;
+        color: var(--white) !important;
+        font-size: 10.5px !important; line-height: 1.15;
+        letter-spacing: 1.2px !important; text-align: center;
       }
-      .hero-card-desc { font-size: 14px; margin-bottom: 20px; }
-      .hero-card-divider { margin-bottom: 16px; }
+      .hero-card-btn.hero-card-btn-secondary { display: none !important; }
+      .hero-card-h1 {
+        grid-column: 1 / -1;
+        color: var(--white); font-size: 30px; line-height: 1.05;
+        margin: 8px 0 0; text-shadow: 0 2px 16px rgba(0,0,0,.35);
+      }
 
       /* Sections */
       .kircher-usp-h2, .kircher-zimmer-h2, .kircher-terrasse-h2,
@@ -486,8 +504,8 @@
     }
     @media (max-width: 480px) {
       :root { --pad: 48px 20px; }
-      .hero-card { padding: 28px 20px; }
-      .hero-card-h1 { font-size: 32px; }
+      .hero-card { padding: 0 16px 24px; }
+      .hero-card-h1 { font-size: 28px; }
     }
   </style>
 </head>
@@ -560,6 +578,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       decoding="async">
 
     <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
+       class="hero-menu-btn"
        target="_blank"
        style="display:inline-block; background:transparent; border:1px solid var(--green); color:var(--green); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:10px 20px; margin-bottom:12px; font-family:var(--font-sans); transition:background .25s, color .25s;"
        onmouseover="this.style.background='var(--green)';this.style.color='#fff';"
