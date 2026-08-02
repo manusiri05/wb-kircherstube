@@ -17,10 +17,11 @@
   <meta name="keywords" content="Pizzeria Barbian, Holzofenpizza Südtirol, Café Barbian, Törggelen Eisacktal, Panorama-Terrasse Kircherstube, Restaurant Barbian" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="preload" as="image" href="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -161,6 +162,13 @@
       position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 60%, rgba(0,0,0,0) 100%);
     }
+    .hero-reserve-cta {
+      position: absolute; z-index: 2; right: max(40px, calc((100vw - var(--max-w)) / 2)); bottom: 40px;
+      display: inline-block; background: var(--green-btn); color: var(--white);
+      padding: 15px 28px; font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none; transition: background .25s;
+    }
+    .hero-reserve-cta:hover { background: var(--green); }
 
     /* ═══════════════════════════════════════════
        KE-STATS
@@ -309,9 +317,27 @@
     }
 
     /* ═══════════════════════════════════════════
-       MAP (global, nach Footer)
+       RESERVIERUNG
     ═══════════════════════════════════════════ */
-    .kircher-map iframe { width: 100%; height: 400px; border: 0; display: block; }
+    .reservation-section {
+      background: var(--bg); padding: 80px 40px; scroll-margin-top: 88px;
+    }
+    .reservation-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: minmax(260px, 1fr) minmax(0, 600px);
+      gap: 72px; align-items: start;
+    }
+    .reservation-copy { padding-top: 20px; }
+    .reservation-label {
+      color: var(--green-btn); font-size: 11px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .reservation-title {
+      color: var(--text); font-size: 44px; line-height: 1.1; margin-bottom: 20px;
+    }
+    .reservation-text { color: var(--text-mid); font-size: 15px; line-height: 1.7; }
+    #convito-widget { width: 100%; min-height: 780px; }
+    #convito-widget iframe { display: block; margin: 0 auto; background: var(--white); }
 
     /* ═══════════════════════════════════════════
        FOOTER
@@ -374,6 +400,8 @@
       .ke-toerg-inner { grid-template-columns: 1fr; }
       .ke-toerg-cols { grid-template-columns: 1fr; }
       .ke-kontakt-inner { grid-template-columns: 1fr; gap: 40px; }
+      .reservation-inner { grid-template-columns: 1fr; gap: 36px; }
+      .reservation-copy { padding-top: 0; text-align: center; }
     }
     @media (max-width: 768px) {
       :root { --pad: 60px 24px; }
@@ -386,6 +414,8 @@
       .ke-toerg-inner h2 { font-size: 30px; }
       .ke-kontakt { padding: 60px 20px; }
       .ke-kontakt-map-wrap iframe { height: 260px; }
+      .reservation-section { padding: 60px 20px; }
+      .reservation-title { font-size: 34px; }
       #footer { padding: 56px 24px 0; }
       .footer-grid { grid-template-columns: 1fr; gap: 36px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
@@ -397,6 +427,7 @@
     }
     @media (max-width: 480px) {
       :root { --pad: 48px 20px; }
+      .hero-reserve-cta { right: 20px; left: 20px; bottom: 24px; text-align: center; }
     }
   </style>
 </head>
@@ -414,7 +445,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header id="site-header">
   <div class="header-inner">
     <a href="/de" class="logo">
-      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img">
+      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img" decoding="async">
     </a>
 
     <nav class="main-nav">
@@ -459,6 +490,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
+  <a href="#tisch-reservieren" class="hero-reserve-cta">Tisch reservieren</a>
 </section>
 
 
@@ -489,7 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="overline">Ofenwarm &amp; Knusprig</span>
     <h2>Holzofenpizza</h2>
     <p>Frische Zutaten direkt von den Bergbauern in nächster Umgebung.</p>
-    <a href="/de/anfrage">Speisekarte entdecken</a>
+    <a href="#tisch-reservieren">Tisch reservieren</a>
 
     <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
       <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
@@ -505,8 +537,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
   <div class="ke-pizza-imgs">
-    <img src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png" alt="Kircherstube Pizza" loading="lazy">
-    <img src="/assets/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.png" alt="Pizzaiolo" loading="lazy">
+    <img src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png" alt="Kircherstube Pizza" loading="lazy" decoding="async">
+    <img src="/assets/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.png" alt="Pizzaiolo" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -519,21 +551,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="sub">Panorama-Terrasse über dem Eisacktal</span>
   <div class="ke-terrasse-grid">
     <div class="ke-terrasse-card">
-      <img src="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" alt="Panorama Terrasse" loading="lazy">
+      <img src="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" alt="Panorama Terrasse" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Die Panorama-Terrasse</h3>
         <p>Der Logenplatz über dem Eisacktal.</p>
       </div>
     </div>
     <div class="ke-terrasse-card">
-      <img src="/assets/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.png" alt="Hausgemachtes Eis" loading="lazy">
+      <img src="/assets/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.png" alt="Hausgemachtes Eis" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Hausgemachtes Eis</h3>
         <p>Cremige Vielfalt aus Südtiroler Milch.</p>
       </div>
     </div>
     <div class="ke-terrasse-card">
-      <img src="/assets/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.png" alt="Barista Kultur" loading="lazy">
+      <img src="/assets/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.png" alt="Barista Kultur" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Barista Kultur</h3>
         <p>Italienischer Espresso am Berghang.</p>
@@ -562,10 +594,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p>Frisch gepresster Süßmost und junger Südtiroler Wein.</p>
         </div>
       </div>
-      <a href="/de/anfrage" class="ke-toerg-btn">Tisch reservieren</a>
+      <a href="#tisch-reservieren" class="ke-toerg-btn">Tisch reservieren</a>
     </div>
     <div>
-      <img src="/assets/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy">
+      <img src="/assets/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -611,16 +643,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
 <!-- ═══════════════════════════════════════════
-     GOOGLE MAP (Vollbreite)
+     TISCHRESERVIERUNG
 ═══════════════════════════════════════════ -->
-<div class="kircher-map">
-  <iframe
-    src="https://maps.google.com/maps?q=Kircherstube+Barbian+Südtirol+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed"
-    allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Kircherstube Barbian auf Google Maps">
-  </iframe>
-</div>
+<section class="reservation-section" id="tisch-reservieren">
+  <div class="reservation-inner">
+    <div class="reservation-copy">
+      <p class="reservation-label">Online reservieren</p>
+      <h2 class="reservation-title">Ihr Tisch in der Kircherstube.</h2>
+      <p class="reservation-text">Wählen Sie Datum, Uhrzeit und Personenzahl direkt online aus. Die verfügbaren Termine werden Ihnen sofort angezeigt.</p>
+    </div>
+    <div id="convito-widget"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var p = new URLSearchParams(window.location.search);
+  var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+  var q = keys.filter(function (k) { return p.get(k); })
+    .map(function (k) { return k + "=" + encodeURIComponent(p.get(k)); }).join("&");
+  var f = document.createElement("iframe");
+  f.src = "https://restaurant-pearl-kappa.vercel.app/w/kircherstube" + (q ? "?" + q : "");
+  f.style.cssText = "width:100%;max-width:600px;height:780px;border:0;border-radius:16px";
+  f.title = "Tisch reservieren";
+  f.loading = "lazy";
+  document.getElementById("convito-widget").appendChild(f);
+})();
+</script>
 
 
 <!-- ═══════════════════════════════════════════
@@ -631,7 +680,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div>
       <a href="/de" class="footer-logo-wrap">
-        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img">
+        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img" loading="lazy" decoding="async">
       </a>
       <p class="footer-desc">Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof &amp; Pizzeria in Barbian.</p>
     </div>
