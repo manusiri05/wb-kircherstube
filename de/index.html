@@ -20,10 +20,11 @@
   <meta property="og:description" content="Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof & Pizzeria in Barbian." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
+  <link rel="preload" as="image" href="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,100;0,400;1,100;1,400&amp;family=DM+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -187,14 +188,19 @@
       width: 150px; display: block; margin-bottom: 24px;
     }
     .hero-card-btn {
-      display: inline-block;
+      display: block; width: 100%; text-align: center;
       background-color: var(--green-btn); color: #fff;
       font-size: 12px; font-weight: 600; letter-spacing: 2px;
       text-transform: uppercase; text-decoration: none;
-      padding: 14px 24px; margin-bottom: 28px;
-      transition: background .25s;
+      padding: 14px 18px;
+      transition: background .25s, color .25s, border-color .25s;
     }
     .hero-card-btn:hover { background-color: var(--green); }
+    .hero-card-actions { display: grid; gap: 10px; margin-bottom: 28px; }
+    .hero-card-btn-secondary {
+      background: transparent; color: var(--green); border: 1px solid var(--green);
+    }
+    .hero-card-btn-secondary:hover { color: var(--white); border-color: var(--green); }
     .hero-card-divider { border-top: 1px solid #DDD8D0; margin-bottom: 28px; }
     .hero-card-label {
       font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
@@ -500,7 +506,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="header-inner">
 
     <a href="/de" class="logo">
-      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img">
+      <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img" decoding="async">
     </a>
 
     <nav class="main-nav">
@@ -550,7 +556,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Pizzeria Schriftzug -->
     <img class="hero-card-pizzeria"
       src="/assets/pizzeria.jpg"
-      alt="Pizzeria Kircherstube">
+      alt="Pizzeria Kircherstube"
+      decoding="async">
 
     <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
        target="_blank"
@@ -560,9 +567,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Pizzakarte
     </a>
 
-    <a href="tel:+390471650074" class="hero-card-btn">
-      Jetzt Anrufen &nbsp;·&nbsp; +39 0471 650 074
-    </a>
+    <div class="hero-card-actions">
+      <a href="/de/kircherstube#tisch-reservieren" class="hero-card-btn js-reservation-link">
+        Tisch reservieren
+      </a>
+      <a href="tel:+390471650074" class="hero-card-btn hero-card-btn-secondary">
+        Jetzt anrufen &nbsp;·&nbsp; +39 0471 650 074
+      </a>
+    </div>
 
     <div class="hero-card-divider"></div>
 
@@ -588,7 +600,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="kircher-usp-imgwrap">
       <img class="kircher-usp-img"
         src="/assets/Gemini_Generated_Image_y1b9qcy1b9qcy1b9-A4qKYkEtHM3q5O2RMaaW5A.png"
-        alt="Kircherstube Frühstück Südtirol">
+        alt="Kircherstube Frühstück Südtirol"
+        loading="lazy" decoding="async">
       <div class="kircher-usp-floatcard">
         <div class="kircher-usp-floatcard-icon">🍽</div>
         <p class="kircher-usp-floatcard-title">À la carte</p>
@@ -633,7 +646,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="kircher-zimmer-grid">
       <div class="zimmer-card">
         <img src="/assets/gasthof-kircher-sepp-barbian-eisacktal-suedtirol-10-47jk24Av5PZkWtQeGzKP9A.webp"
-             alt="Doppelzimmer Dolomitenblick Kircherstube">
+             alt="Doppelzimmer Dolomitenblick Kircherstube" loading="lazy" decoding="async">
         <p class="zimmer-card-name">Doppelzimmer mit Balkon</p>
         <p class="zimmer-card-feat">Balkon · Dolomitenblick · Dusche &amp; WC</p>
         <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
@@ -641,7 +654,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="zimmer-card">
         <img src="/assets/ZimmerDZ-_Tr_HBYoycZzYAtzHTJ0GA.jpg"
-             alt="Doppelzimmer Bergwiesenblick Kircherstube">
+             alt="Doppelzimmer Bergwiesenblick Kircherstube" loading="lazy" decoding="async">
         <p class="zimmer-card-name">Doppelzimmer mit Balkon</p>
         <p class="zimmer-card-feat">Balkon · Blick ins Grüne · Dusche &amp; WC</p>
         <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
@@ -649,7 +662,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <div class="zimmer-card">
         <img src="/assets/gasthof-kircher-sepp-barbian-eisacktal-suedtirol-108-FVQGJMV3V_7Deq2rXBmQfA.webp"
-             alt="Doppelzimmer Kircherstube Barbian">
+             alt="Doppelzimmer Kircherstube Barbian" loading="lazy" decoding="async">
         <p class="zimmer-card-name">Doppelzimmer</p>
         <p class="zimmer-card-feat">Gemütlich &amp; ruhig · Dusche &amp; WC</p>
         <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
@@ -681,6 +694,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            style="display:inline-block; border:1px solid var(--green-light); color:#F7F3EE; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans);">
           Speisekarte
         </a>
+        <a href="/de/kircherstube#tisch-reservieren"
+           class="js-reservation-link"
+           style="display:inline-block; background:var(--green-btn); border:1px solid var(--green-btn); color:#fff; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans);">
+          Tisch reservieren
+        </a>
       </div>
       <div class="kircher-restaurant-info">
         <div>
@@ -705,7 +723,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <img class="kircher-restaurant-img"
         src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png"
-        alt="Kircherstube Restaurant Pizzeria Barbian">
+        alt="Kircherstube Restaurant Pizzeria Barbian"
+        loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -719,7 +738,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div>
       <img class="kircher-terrasse-img"
         src="/assets/Gemini_Generated_Image_cse9upcse9upcse9-oh1YLHUcPIrGWa2vnPbQcA.png"
-        alt="Terrasse Kircherstube Abend Südtirol">
+        alt="Terrasse Kircherstube Abend Südtirol"
+        loading="lazy" decoding="async">
     </div>
     <div>
       <h2 class="kircher-terrasse-h2">Abendessen mit Aussicht.</h2>
@@ -734,7 +754,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="check-text">Windgeschützt &amp; beheizbar an kühlen Abenden</p>
         </div>
       </div>
-      <a href="tel:+390471650074" class="btn-outline">Tisch reservieren</a>
+      <a href="/de/kircherstube#tisch-reservieren" class="btn-outline js-reservation-link">Tisch reservieren</a>
     </div>
   </div>
 </section>
@@ -824,7 +844,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Logo + Beschreibung -->
     <div>
       <a href="/de" class="footer-logo-wrap" style="display:inline-block; margin-bottom:18px;">
-        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img">
+        <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img" loading="lazy" decoding="async">
       </a>
       <p class="footer-desc">Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof &amp; Pizzeria in Barbian.</p>
     </div>
@@ -904,6 +924,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
+
+  /* Tracking-Parameter bis zum Reservierungswidget mitnehmen */
+  const trackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+  const currentParams = new URLSearchParams(window.location.search);
+  document.querySelectorAll('.js-reservation-link').forEach(link => {
+    const target = new URL(link.href, window.location.href);
+    trackingKeys.forEach(key => {
+      if (currentParams.get(key)) target.searchParams.set(key, currentParams.get(key));
+    });
+    link.href = target.pathname + target.search + target.hash;
+  });
 </script>
 
 <!-- ↓↓↓ Booking Widget Script hier einfügen (vor </body>) ↓↓↓ -->
