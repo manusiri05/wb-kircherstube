@@ -17,7 +17,7 @@
   <meta name="keywords" content="Pizzeria Barbian, Holzofenpizza Südtirol, Café Barbian, Törggelen Eisacktal, Panorama-Terrasse Kircherstube, Restaurant Barbian" />
   <meta name="robots" content="index, follow" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
-  <link rel="preload" as="image" href="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/hero_kircherstube.webp" type="image/webp" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -155,7 +155,7 @@
     }
     .hero-bg {
       position: absolute; inset: 0;
-      background-image: url('/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg');
+      background-image: url('/assets/hero_kircherstube.webp');
       background-size: cover; background-position: center 40%;
     }
     .hero-overlay {
@@ -336,7 +336,7 @@
       color: var(--text); font-size: 44px; line-height: 1.1; margin-bottom: 20px;
     }
     .reservation-text { color: var(--text-mid); font-size: 15px; line-height: 1.7; }
-    #convito-widget { width: 100%; min-height: 780px; }
+    #convito-widget { width: 100%; min-height: 640px; }
     #convito-widget iframe { display: block; margin: 0 auto; background: var(--white); }
 
     /* ═══════════════════════════════════════════
@@ -551,7 +551,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="sub">Panorama-Terrasse über dem Eisacktal</span>
   <div class="ke-terrasse-grid">
     <div class="ke-terrasse-card">
-      <img src="/assets/Barbian_WolfgangGafriller3-YdddjhRSz9qnVVI7UI1Ong (1).jpg" alt="Panorama Terrasse" loading="lazy" decoding="async">
+      <img src="/assets/hero_kircherstube.webp" alt="Panorama Terrasse" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Die Panorama-Terrasse</h3>
         <p>Der Logenplatz über dem Eisacktal.</p>
@@ -663,11 +663,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   var q = keys.filter(function (k) { return p.get(k); })
     .map(function (k) { return k + "=" + encodeURIComponent(p.get(k)); }).join("&");
   var f = document.createElement("iframe");
-  f.src = "https://restaurant-pearl-kappa.vercel.app/w/kircherstube" + (q ? "?" + q : "");
-  f.style.cssText = "width:100%;max-width:600px;height:780px;border:0;border-radius:16px";
+  f.src = "https://app.convito.eu/w/kircherstube" + (q ? "?" + q : "");
+  f.style.cssText = "width:100%;max-width:600px;height:640px;border:0;border-radius:16px";
   f.title = "Tisch reservieren";
-  f.loading = "lazy";
   document.getElementById("convito-widget").appendChild(f);
+  window.addEventListener("message", function (e) {
+    if (e && e.data && e.data.type === "convito-height" && e.data.height) {
+      f.style.height = e.data.height + "px";
+    }
+  });
 })();
 </script>
 
