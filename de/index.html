@@ -12,15 +12,12 @@
   })(window,document,'script','dataLayer','GTM-TDN8CNCC');</script>
   <!-- End Google Tag Manager -->
 
-  <title>Kircherstube Barbian – Frühstückspension & Pizzeria | Südtirol</title>
-  <meta name="description" content="Die Kircherstube in Barbian, Südtirol: Frühstückspension mit Dolomitenblick, Pizzeria & Gasthaus. 10 Minuten vom Dorfzentrum, Panoramaterrasse & herzliche Gastfreundschaft." />
-  <meta name="keywords" content="Kircherstube Barbian, Frühstückspension Barbian, Pizzeria Barbian, Gasthof Eisacktal, Unterkunft Südtirol, Hotel Barbian, Dolomiten Aussicht, Übernachtung Barbian" />
+  <title>Kircherstube – Pizzeria, Café & Terrasse in Barbian Südtirol</title>
+  <meta name="description" content="Holzofenpizza, hausgemachtes Eis, Barista-Kaffee und Törggelen auf der Panorama-Terrasse der Kircherstube Barbian. Geöffnet durchgehend, Pizzeria ab 16 Uhr." />
+  <meta name="keywords" content="Pizzeria Barbian, Holzofenpizza Südtirol, Café Barbian, Törggelen Eisacktal, Panorama-Terrasse Kircherstube, Restaurant Barbian" />
   <meta name="robots" content="index, follow" />
-  <meta property="og:title" content="Kircherstube Barbian – Frühstückspension & Pizzeria" />
-  <meta property="og:description" content="Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof & Pizzeria in Barbian." />
-  <meta property="og:type" content="website" />
   <link rel="icon" href="/assets/favicon.png" type="image/png" />
-  <link rel="preload" as="image" href="/assets/hero_schlern.jpg" fetchpriority="high" />
+  <link rel="preload" as="image" href="/assets/hero_kircherstube.webp" type="image/webp" fetchpriority="high" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,29 +27,31 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:            #F7F3EE;
-      --bg-cream:      #F2EDE6;
-      --bg-dark:       #1C3A2E;
-      --white:         #FFFFFF;
-      --text:          #1C1C1A;
-      --text-mid:      #3D3830;
-      --text-light:    #6B6355;
-      --green:         #2D7A4F;
-      --green-btn:     #48866C;
-      --green-light:   #8BAF95;
-      --green-muted:   #B8C9BC;
-      --green-border:  #2D5A40;
-      --red-day:       #E8635A;
-      --font-serif:    'Playfair Display', Georgia, serif;
-      --font-sans:     'DM Sans', system-ui, sans-serif;
-      --max-w:         1100px;
-      --pad:           80px 40px;
+      --bg:           #F7F3EE;
+      --bg-cream:     #F2EDE6;
+      --bg-dark:      #1C3A2E;
+      --white:        #FFFFFF;
+      --text:         #1C1C1A;
+      --text-mid:     #3D3830;
+      --text-light:   #6B6355;
+      --text-xlight:  #9B9186;
+      --green:        #2D7A4F;
+      --green-btn:    #48866C;
+      --green-light:  #8BAF95;
+      --green-muted:  #B8C9BC;
+      --green-border: #2D5A40;
+      --red-day:      #E8635A;
+      --border:       #EDE8E0;
+      --font-serif:   'Playfair Display', Georgia, serif;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --max-w:        1100px;
+      --pad:          80px 40px;
     }
 
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-sans); color: var(--text); background: var(--white); }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
+    img  { max-width: 100%; display: block; }
+    a    { color: inherit; }
     h1, h2, h3, h4, h5, h6 { font-family: var(--font-serif); font-weight: 100; }
 
     /* ═══════════════════════════════════════════
@@ -74,16 +73,11 @@
       margin-inline: auto; padding-inline: 40px;
       display: flex; align-items: center; justify-content: space-between;
     }
-
-    /* Logo */
     .logo { display: flex; align-items: center; text-decoration: none; flex: 1; }
     .logo-img { height: 46px; width: auto; transition: filter .4s; }
-    /* Transparent (auf Hero): Logo weiß */
     #site-header:not(.scrolled) .logo-img { filter: brightness(0) invert(1); }
-    /* Scrolled: Logo normal (grün) */
-    #site-header.scrolled .logo-img { filter: none; }
+    #site-header.scrolled       .logo-img { filter: none; }
 
-    /* Nav */
     .main-nav { display: flex; align-items: center; gap: 28px; }
     .main-nav a {
       font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
@@ -93,12 +87,15 @@
     #site-header.scrolled .main-nav a { color: var(--text-light); }
     .main-nav a:hover { color: var(--white); }
     #site-header.scrolled .main-nav a:hover { color: var(--green); }
+    .main-nav a.active-page { color: var(--white); border-bottom: 1px solid rgba(255,255,255,.5); }
+    #site-header.scrolled .main-nav a.active-page { color: var(--green); border-bottom-color: var(--green); }
+
     .nav-book {
       display: inline-flex; align-items: center;
       padding: 9px 20px; background: var(--green);
       color: var(--white) !important;
       font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
-      font-weight: 500; text-decoration: none;
+      font-weight: 500; text-decoration: none; border-bottom: none !important;
       transition: background .25s;
     }
     .nav-book:hover { background: var(--green-btn) !important; }
@@ -121,18 +118,12 @@
     #site-header.scrolled .lang-btn.active { color: var(--green); background: rgba(45,122,79,.08); }
     #site-header.scrolled .lang-btn:hover  { color: var(--green); }
 
-    /* Footer Logo */
-    .footer-logo-img { height: 40px; width: auto; }
-
     /* Hamburger */
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
       cursor: pointer; padding: 4px; background: none; border: none;
     }
-    .hamburger span {
-      width: 24px; height: 2px; display: block;
-      background: var(--white); transition: background .3s;
-    }
+    .hamburger span { width: 24px; height: 2px; display: block; background: var(--white); transition: background .3s; }
     #site-header.scrolled .hamburger span { background: var(--text); }
 
     /* Mobile Nav */
@@ -140,7 +131,7 @@
       position: fixed; top: 72px; left: 0; right: 0; bottom: 0;
       background: var(--white); z-index: 199;
       display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 36px;
+      justify-content: center; gap: 32px;
       transform: translateY(-110%); opacity: 0;
       transition: transform .4s ease, opacity .4s ease;
       pointer-events: none;
@@ -151,247 +142,219 @@
       text-decoration: none; letter-spacing: .03em; transition: color .2s;
     }
     .mobile-nav a:hover { color: var(--green); }
-    .mobile-nav .nav-book { font-size: 13px; padding: 14px 40px; margin-top: 8px; }
+    .mobile-nav .nav-book { font-size: 13px; padding: 14px 40px; margin-top: 4px; }
+    .mobile-lang { display: flex; gap: 16px; margin-top: 4px; }
+    .mobile-lang a { font-size: 14px !important; font-weight: 600; }
+    .mobile-lang a.active { color: var(--green) !important; }
 
     /* ═══════════════════════════════════════════
-       HERO
+       HERO — nur Bild, kein Card
     ═══════════════════════════════════════════ */
     #hero {
-      position: relative; height: 100vh; min-height: 620px;
-      display: flex; align-items: flex-end;
-      overflow: hidden;
+      position: relative; height: 100vh; min-height: 580px; overflow: hidden;
     }
     .hero-bg {
       position: absolute; inset: 0;
-      /* ↓ Hero-Bild nach GitHub-Upload hier eintragen, z.B. /assets/hero.jpg */
-      background-image: url('/assets/hero_schlern.jpg');
-      background-size: cover; background-position: center 35%;
+      background-image: url('/assets/hero_kircherstube.webp');
+      background-size: cover; background-position: center 40%;
     }
     .hero-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(
-        to right,
-        rgba(0,0,0,.22) 0%,
-        rgba(0,0,0,.08) 50%,
-        rgba(0,0,0,0) 100%
-      );
+      background: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 60%, rgba(0,0,0,0) 100%);
     }
-    .hero-card {
-      position: relative; z-index: 2;
-      background-color: var(--bg-cream);
-      padding: 40px 44px;
-      width: 420px;
-      margin-bottom: 0;
-      margin-left: max(40px, calc((100vw - var(--max-w)) / 2));
+    .hero-reserve-cta {
+      position: absolute; z-index: 2; right: max(40px, calc((100vw - var(--max-w)) / 2)); bottom: 40px;
+      display: inline-block; background: var(--green-btn); color: var(--white);
+      padding: 15px 28px; font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none; transition: background .25s;
     }
-    .hero-card-pizzeria {
-      width: 150px; display: block; margin-bottom: 24px;
-    }
-    .hero-card-btn {
-      display: block; width: 100%; text-align: center;
-      background-color: var(--green-btn); color: #fff;
-      font-size: 12px; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; text-decoration: none;
-      padding: 14px 18px;
-      transition: background .25s, color .25s, border-color .25s;
-    }
-    .hero-card-btn:hover { background-color: var(--green); }
-    .hero-card-actions { display: grid; gap: 10px; margin-bottom: 28px; }
-    .hero-card-btn-secondary {
-      background: transparent; color: var(--green); border: 1px solid var(--green);
-    }
-    .hero-card-btn-secondary:hover { color: var(--white); border-color: var(--green); }
-    .hero-card-divider { border-top: 1px solid #DDD8D0; margin-bottom: 28px; }
-    .hero-card-label {
-      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-      color: var(--text-light); margin-bottom: 14px;
-    }
-    .hero-card-h1 {
-      font-family: var(--font-serif); font-size: 44px;
-      line-height: 1.08; color: var(--text); margin-bottom: 18px;
-    }
-    .hero-card-desc {
-      font-size: 15px; line-height: 1.65; color: var(--text-mid); margin-bottom: 28px;
-    }
-    .hero-card-link {
-      font-size: 13px; color: var(--text); text-decoration: none;
-      letter-spacing: 1px; display: inline-flex; align-items: center; gap: 8px;
-      transition: color .2s;
-    }
-    .hero-card-link:hover { color: var(--green); }
+    .hero-reserve-cta:hover { background: var(--green); }
 
     /* ═══════════════════════════════════════════
-       USP
+       KE-STATS
     ═══════════════════════════════════════════ */
-    .kircher-usp { background: var(--bg); padding: var(--pad); }
-    .kircher-usp-inner {
-      max-width: var(--max-w); margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    .ke-stats {
+      background: var(--bg-dark);
+      display: grid; grid-template-columns: repeat(3,1fr);
     }
-    .kircher-usp-imgwrap { position: relative; }
-    .kircher-usp-img { width: 100%; height: 480px; object-fit: cover; display: block; }
-    .kircher-usp-floatcard {
-      position: absolute; bottom: 24px; right: -24px;
-      background: var(--white); padding: 24px; max-width: 200px;
-      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    .ke-stat {
+      padding: 28px 40px; border-right: 1px solid var(--green-border);
+      text-align: center;
     }
-    .kircher-usp-floatcard-icon { font-size: 22px; margin-bottom: 8px; }
-    .kircher-usp-floatcard-title { font-size: 13px; font-weight: 500; color: var(--text); margin: 0 0 4px; }
-    .kircher-usp-floatcard-desc { font-size: 12px; color: var(--text-light); margin: 0; line-height: 1.5; }
-    .section-label {
-      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-      font-weight: 500; margin-bottom: 16px;
-    }
-    .section-label.green { color: var(--green); }
-    .section-label.light { color: var(--green-light); }
-    .kircher-usp-h2 {
-      font-family: var(--font-serif); font-size: 42px; line-height: 1.15;
-      color: var(--text); margin-bottom: 24px;
-    }
-    .kircher-usp-body { font-size: 16px; line-height: 1.7; color: #4A4540; margin-bottom: 40px; }
-    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-    .feat-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 6px; }
-    .feat-desc { font-size: 13px; color: var(--text-light); line-height: 1.5; margin: 0; }
-
-    /* ═══════════════════════════════════════════
-       ZIMMER
-    ═══════════════════════════════════════════ */
-    .kircher-zimmer { background: var(--white); padding: var(--pad); }
-    .kircher-zimmer-inner { max-width: var(--max-w); margin: 0 auto; }
-    .kircher-zimmer-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 48px;
-    }
-    .kircher-zimmer-h2 {
-      font-family: var(--font-serif); font-size: 42px; color: var(--text); margin: 0;
-    }
-    .link-underline {
-      font-size: 12px; color: var(--green); text-decoration: none;
-      letter-spacing: 1px; text-transform: uppercase; font-weight: 500;
-      border-bottom: 1px solid var(--green); padding-bottom: 2px;
-      white-space: nowrap; transition: opacity .2s;
-    }
-    .link-underline:hover { opacity: .65; }
-    .kircher-zimmer-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
-    .zimmer-card img { width: 100%; height: 260px; object-fit: cover; margin-bottom: 16px; }
-    .zimmer-card-name { font-size: 16px; font-weight: 500; margin-bottom: 4px; }
-    .zimmer-card-feat { font-size: 13px; color: var(--text-light); margin-bottom: 4px; }
-    .zimmer-card-price { font-size: 13px; color: var(--green); font-weight: 500; margin-bottom: 12px; }
-    .zimmer-card-link {
-      font-size: 12px; color: var(--green); text-decoration: none;
-      letter-spacing: 1px; text-transform: uppercase; font-weight: 500;
-      transition: opacity .2s;
-    }
-    .zimmer-card-link:hover { opacity: .65; }
-
-    /* ═══════════════════════════════════════════
-       RESTAURANT
-    ═══════════════════════════════════════════ */
-    .kircher-restaurant { background: var(--bg-dark); padding: var(--pad); }
-    .kircher-restaurant-inner {
-      max-width: var(--max-w); margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
-    }
-    .kircher-restaurant-h2 {
-      font-family: var(--font-serif); font-size: 44px; line-height: 1.1;
-      color: #F7F3EE; font-style: italic; margin-bottom: 28px;
-    }
-    .kircher-restaurant-body { font-size: 16px; line-height: 1.7; color: var(--green-muted); margin-bottom: 48px; }
-    .kircher-restaurant-info { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .info-label {
+    .ke-stat:last-child { border-right: none; }
+    .ke-stat-label {
       font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--green-light); margin-bottom: 8px;
+      color: var(--green-light); margin-bottom: 6px; font-family: var(--font-sans);
     }
-    .info-body { font-size: 14px; color: #F7F3EE; line-height: 1.8; margin: 0; }
-    .info-sub  { font-size: 12px; color: var(--green-light); }
-    .info-rest { color: var(--red-day); font-size: 12px; }
-    .kircher-restaurant-img { width: 100%; height: 480px; object-fit: cover; display: block; }
+    .ke-stat-value { font-size: 14px; color: #F7F3EE; font-weight: 500; font-family: var(--font-sans); }
+    .ke-stat-value.red { color: var(--red-day); }
 
     /* ═══════════════════════════════════════════
-       TERRASSE
+       KE-PIZZA
     ═══════════════════════════════════════════ */
-    .kircher-terrasse { background: var(--bg); padding: var(--pad); }
-    .kircher-terrasse-inner {
+    .ke-pizza {
+      padding: 80px 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+      align-items: center; background: var(--white);
+      max-width: 100%;
+    }
+    .ke-pizza-inner { max-width: var(--max-w); margin: 0 auto; }
+    .ke-pizza-text .overline {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green-btn); font-weight: 500; display: block;
+      margin-bottom: 16px; font-family: var(--font-sans);
+    }
+    .ke-pizza-text h2 {
+      font-size: 44px; line-height: 1.1; color: var(--text);
+      margin-bottom: 24px; font-weight: 100;
+    }
+    .ke-pizza-text p {
+      font-size: 15px; line-height: 1.7; color: #4A4540; margin-bottom: 32px;
+    }
+    .ke-pizza-text a {
+      font-size: 12px; color: var(--green-btn); text-decoration: none;
+      letter-spacing: 2px; text-transform: uppercase; font-weight: 500;
+      border-bottom: 1px solid var(--green-btn); padding-bottom: 2px;
+      font-family: var(--font-sans);
+    }
+    .ke-pizza-imgs img:first-child {
+      width: 100%; height: 340px; object-fit: cover; display: block;
+    }
+    .ke-pizza-imgs img:last-child {
+      width: 160px; height: 120px; object-fit: cover; display: block;
+      margin-left: auto; margin-top: -60px; border: 4px solid var(--white);
+    }
+
+    /* ═══════════════════════════════════════════
+       KE-TERRASSE
+    ═══════════════════════════════════════════ */
+    .ke-terrasse {
+      background: var(--bg); padding: 80px 60px; text-align: center;
+    }
+    .ke-terrasse h2 {
+      font-size: 48px; color: var(--text); margin-bottom: 8px; font-weight: 100;
+    }
+    .ke-terrasse h2 em { font-style: italic; }
+    .ke-terrasse .sub {
+      font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--green-btn); font-weight: 500; margin-bottom: 48px;
+      display: block; font-family: var(--font-sans);
+    }
+    .ke-terrasse-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 20px;
+      max-width: var(--max-w); margin: 0 auto;
+    }
+    .ke-terrasse-card { position: relative; overflow: hidden; }
+    .ke-terrasse-card img { width: 100%; height: 280px; object-fit: cover; display: block; }
+    .ke-terrasse-card-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      padding: 40px 20px 20px;
+    }
+    .ke-terrasse-card-label h3 {
+      font-size: 18px; color: #fff; margin-bottom: 4px; font-weight: 100;
+    }
+    .ke-terrasse-card-label p { font-size: 12px; color: rgba(255,255,255,0.8); }
+
+    /* ═══════════════════════════════════════════
+       KE-TOERG
+    ═══════════════════════════════════════════ */
+    .ke-toerg { background: var(--bg); padding: 80px 60px; }
+    .ke-toerg-inner {
+      background: #FDFBEC; padding: 60px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center; max-width: var(--max-w); margin: 0 auto;
+    }
+    .ke-toerg-badge {
+      display: inline-block; background: var(--green-btn); color: #fff;
+      font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 6px 12px; margin-bottom: 20px; font-family: var(--font-sans);
+    }
+    .ke-toerg-inner h2 {
+      font-size: 44px; line-height: 1.1; color: var(--text);
+      font-style: italic; margin-bottom: 24px; font-weight: 100;
+    }
+    .ke-toerg-inner > div > p {
+      font-size: 15px; line-height: 1.7; color: #4A4540; margin-bottom: 40px;
+    }
+    .ke-toerg-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .ke-toerg-col h4 {
+      font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 8px;
+      font-family: var(--font-sans);
+    }
+    .ke-toerg-col p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+    .ke-toerg-btn {
+      display: inline-block; background: var(--bg-dark); color: #FDFBEC;
+      padding: 14px 32px; font-size: 12px; letter-spacing: 2px;
+      text-transform: uppercase; text-decoration: none; margin-top: 32px;
+      font-family: var(--font-sans); transition: background .25s;
+    }
+    .ke-toerg-btn:hover { background: var(--green-border); }
+
+    /* ═══════════════════════════════════════════
+       KE-KONTAKT
+    ═══════════════════════════════════════════ */
+    .ke-kontakt { background: var(--bg-dark); padding: 80px 60px; }
+    .ke-kontakt-inner {
       max-width: var(--max-w); margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
     }
-    .kircher-terrasse-img { width: 100%; height: 420px; object-fit: cover; display: block; }
-    .kircher-terrasse-h2 {
-      font-family: var(--font-serif); font-size: 42px; line-height: 1.15;
-      color: var(--text); margin-bottom: 24px;
+    .ke-kontakt h2 {
+      font-size: 36px; color: #F7F3EE; margin-bottom: 32px; font-weight: 100;
     }
-    .kircher-terrasse-body { font-size: 16px; line-height: 1.7; color: #4A4540; margin-bottom: 32px; }
-    .check-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 40px; }
-    .check-item { display: flex; align-items: center; gap: 12px; }
-    .check-icon { color: var(--green); font-size: 16px; flex-shrink: 0; }
-    .check-text { font-size: 14px; color: var(--text-mid); margin: 0; }
-    .btn-outline {
-      display: inline-block; border: 1px solid var(--text);
-      padding: 14px 32px; font-size: 12px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--text); text-decoration: none;
-      font-weight: 500; transition: background .25s, color .25s;
+    .ke-kontakt-info { display: flex; flex-direction: column; gap: 16px; }
+    .ke-kontakt-row { display: flex; gap: 12px; align-items: flex-start; }
+    .ke-kontakt-row .icon {
+      color: var(--green-light); font-size: 13px; font-weight: 600;
+      min-width: 20px; margin-top: 2px;
     }
-    .btn-outline:hover { background: var(--text); color: var(--white); }
+    .ke-kontakt-row p { font-size: 14px; color: var(--green-muted); line-height: 1.6; }
+    .ke-kontakt-row a { color: var(--green-muted); text-decoration: none; transition: color .2s; }
+    .ke-kontakt-row a:hover { color: #F7F3EE; }
+    .ke-kontakt-map-wrap iframe {
+      width: 100%; height: 320px; border: 0; display: block;
+      filter: grayscale(20%) contrast(1.05);
+    }
 
     /* ═══════════════════════════════════════════
-       REVIEWS
+       RESERVIERUNG
     ═══════════════════════════════════════════ */
-    .kircher-reviews { background: var(--bg-dark); padding: var(--pad); }
-    .kircher-reviews-inner { max-width: var(--max-w); margin: 0 auto; }
-    .kircher-reviews-header { text-align: center; margin-bottom: 60px; }
-    .kircher-reviews-h2 {
-      font-family: var(--font-serif); font-size: 42px; color: #F7F3EE;
-      font-style: italic; margin-bottom: 40px;
+    .reservation-section {
+      background: var(--bg); padding: 80px 40px; scroll-margin-top: 88px;
     }
-    .kircher-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; }
-    .kircher-badge { display: flex; align-items: center; gap: 12px; }
-    .badge-logo { padding: 8px 14px; border-radius: 4px; }
-    .badge-logo.booking { background: #003580; }
-    .badge-logo.google  { background: var(--white); }
-    .badge-logo p { margin: 0; }
-    .badge-logo.booking p { color: var(--white); font-size: 11px; letter-spacing: 1px; font-weight: 500; }
-    .badge-logo.google  p { color: #4285F4; font-size: 14px; font-weight: 700; }
-    .badge-score { font-size: 22px; font-weight: 600; color: #F7F3EE; margin: 0; line-height: 1; }
-    .badge-sublabel { font-size: 11px; color: var(--green-light); margin: 4px 0 0; }
-    .badge-divider { width: 1px; background: var(--green-border); height: 40px; }
-    .kircher-reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
-    .review-card { border: 1px solid var(--green-border); padding: 36px; }
-    .review-quote {
-      font-size: 48px; color: var(--green); line-height: .8;
-      margin-bottom: 20px; font-family: var(--font-serif);
+    .reservation-inner {
+      max-width: var(--max-w); margin: 0 auto;
+      display: grid; grid-template-columns: minmax(260px, 1fr) minmax(0, 600px);
+      gap: 72px; align-items: start;
     }
-    .review-stars { color: #F5C842; font-size: 14px; margin-bottom: 16px; }
-    .review-text {
-      font-size: 14px; line-height: 1.7; color: var(--green-muted);
-      margin-bottom: 28px; font-style: italic;
+    .reservation-copy { padding-top: 20px; }
+    .reservation-label {
+      color: var(--green-btn); font-size: 11px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 16px;
     }
-    .review-divider { border-top: 1px solid var(--green-border); padding-top: 20px; }
-    .review-name { font-size: 13px; font-weight: 500; color: #F7F3EE; margin: 0; }
-    .review-source { font-size: 11px; color: var(--green-light); margin: 4px 0 0; }
-
-    /* ═══════════════════════════════════════════
-       GOOGLE MAP
-    ═══════════════════════════════════════════ */
-    .kircher-map iframe { width: 100%; height: 400px; border: 0; display: block; }
+    .reservation-title {
+      color: var(--text); font-size: 44px; line-height: 1.1; margin-bottom: 20px;
+    }
+    .reservation-text { color: var(--text-mid); font-size: 15px; line-height: 1.7; }
+    #convito-widget { width: 100%; min-height: 640px; }
+    #convito-widget iframe { display: block; margin: 0 auto; background: var(--white); }
 
     /* ═══════════════════════════════════════════
        FOOTER
     ═══════════════════════════════════════════ */
-    #footer {
-      background: var(--white);
-      border-top: 1px solid #E8E2DA;
-      padding: 72px 40px 0;
-    }
+    #footer { background: var(--white); border-top: 1px solid #E8E2DA; padding: 72px 40px 0; }
     .footer-grid {
       max-width: var(--max-w); margin: 0 auto;
       display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
       padding-bottom: 56px;
     }
-    .footer-logo-wrap { text-decoration: none; }
+    .footer-logo-wrap { text-decoration: none; display: inline-block; margin-bottom: 18px; }
+    .footer-logo-img  { height: 40px; width: auto; }
     .footer-desc { font-size: 13px; color: var(--text-light); line-height: 1.65; }
     .footer-col-label {
       font-size: 10px; letter-spacing: .2em; text-transform: uppercase;
       color: var(--text-light); font-weight: 500; margin-bottom: 16px;
+      font-family: var(--font-sans);
     }
     .footer-col p { font-size: 13px; color: var(--text-mid); line-height: 1.75; margin: 0; }
     .footer-col a { text-decoration: none; color: var(--text-mid); transition: color .2s; }
@@ -416,96 +379,55 @@
     /* ═══════════════════════════════════════════
        UTILITIES
     ═══════════════════════════════════════════ */
-    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
     /* ═══════════════════════════════════════════
        RESPONSIVE
     ═══════════════════════════════════════════ */
     @media (max-width: 1024px) {
-      .kircher-usp-inner,
-      .kircher-restaurant-inner,
-      .kircher-terrasse-inner  { grid-template-columns: 1fr; gap: 48px; }
-      .kircher-usp-img         { height: 380px !important; }
-      .kircher-usp-floatcard   { right: 16px; bottom: 16px; max-width: 160px; padding: 16px; }
-      .kircher-restaurant-img  { height: 320px !important; }
-      .kircher-terrasse-img    { height: 320px !important; }
-      .kircher-reviews-grid    { grid-template-columns: repeat(2,1fr); }
-      .badge-divider           { display: none; }
-      .footer-grid             { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .ke-pizza { padding: 80px 40px; }
+      .ke-terrasse { padding: 80px 40px; }
+      .ke-toerg { padding: 80px 40px; }
+      .ke-kontakt { padding: 80px 40px; }
     }
     @media (max-width: 900px) {
-      .kircher-zimmer-grid { grid-template-columns: repeat(2,1fr); }
       .main-nav  { display: none; }
       .hamburger { display: flex; }
+      .ke-pizza { grid-template-columns: 1fr; padding: 60px 30px; gap: 40px; }
+      .ke-pizza-imgs img:last-child { margin-top: 0; }
+      .ke-terrasse-grid { grid-template-columns: 1fr; }
+      .ke-toerg-inner { grid-template-columns: 1fr; }
+      .ke-toerg-cols { grid-template-columns: 1fr; }
+      .ke-kontakt-inner { grid-template-columns: 1fr; gap: 40px; }
+      .reservation-inner { grid-template-columns: 1fr; gap: 36px; }
+      .reservation-copy { padding-top: 0; text-align: center; }
     }
     @media (max-width: 768px) {
       :root { --pad: 60px 24px; }
       .header-inner { padding-inline: 24px; }
-
-      /* Mobile Hero: Bild, zwei CTAs und Headline */
-      #hero {
-        height: 100svh; min-height: 560px; align-items: flex-end;
-      }
-      .hero-bg { background-position: center center; }
-      .hero-overlay {
-        background: linear-gradient(
-          to bottom,
-          rgba(0,0,0,.04) 35%,
-          rgba(0,0,0,.12) 58%,
-          rgba(0,0,0,.72) 100%
-        );
-      }
-      .hero-card {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
-        width: 100%; margin: 0; padding: 0 20px 28px;
-        background: transparent;
-      }
-      .hero-card-pizzeria,
-      .hero-card-btn-secondary,
-      .hero-card-divider,
-      .hero-card-label,
-      .hero-card-desc,
-      .hero-card-link { display: none !important; }
-      .hero-card-actions { display: contents; }
-      .hero-menu-btn,
-      .hero-card-btn {
-        display: flex !important; align-items: center; justify-content: center;
-        width: 100%; min-height: 48px; margin: 0 !important;
-        padding: 13px 10px !important;
-        background: rgba(28,58,46,.88) !important;
-        border: 1px solid rgba(255,255,255,.72) !important;
-        color: var(--white) !important;
-        font-size: 10.5px !important; line-height: 1.15;
-        letter-spacing: 1.2px !important; text-align: center;
-      }
-      .hero-card-btn.hero-card-btn-secondary { display: none !important; }
-      .hero-card-h1 {
-        grid-column: 1 / -1;
-        color: var(--white); font-size: 30px; line-height: 1.05;
-        margin: 8px 0 0; text-shadow: 0 2px 16px rgba(0,0,0,.35);
-      }
-
-      /* Sections */
-      .kircher-usp-h2, .kircher-zimmer-h2, .kircher-terrasse-h2,
-      .kircher-reviews-h2 { font-size: 32px !important; }
-      .kircher-restaurant-h2 { font-size: 34px !important; }
-      .kircher-usp-floatcard { display: none; }
-      .kircher-zimmer-header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .kircher-zimmer-grid   { grid-template-columns: 1fr; }
-      .kircher-restaurant-info { grid-template-columns: 1fr; gap: 20px; }
-      .kircher-reviews-grid  { grid-template-columns: 1fr; }
-      .review-card           { padding: 24px; }
-
-      /* Footer */
-      #footer      { padding: 56px 24px 0; }
+      .ke-pizza { padding: 60px 24px; }
+      .ke-terrasse { padding: 60px 24px; }
+      .ke-terrasse h2 { font-size: 30px; }
+      .ke-toerg { padding: 40px 20px; }
+      .ke-toerg-inner { padding: 32px 24px; }
+      .ke-toerg-inner h2 { font-size: 30px; }
+      .ke-kontakt { padding: 60px 20px; }
+      .ke-kontakt-map-wrap iframe { height: 260px; }
+      .reservation-section { padding: 60px 20px; }
+      .reservation-title { font-size: 34px; }
+      #footer { padding: 56px 24px 0; }
       .footer-grid { grid-template-columns: 1fr; gap: 36px; }
       .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
     }
+    @media (max-width: 600px) {
+      .ke-stats { grid-template-columns: 1fr; }
+      .ke-stat { border-right: none; border-bottom: 1px solid var(--green-border); }
+      .ke-stat:last-child { border-bottom: none; }
+    }
     @media (max-width: 480px) {
       :root { --pad: 48px 20px; }
-      .hero-card { padding: 0 16px 24px; }
-      .hero-card-h1 { font-size: 28px; }
+      .hero-reserve-cta { right: 20px; left: 20px; bottom: 24px; text-align: center; }
     }
   </style>
 </head>
@@ -522,7 +444,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ═══════════════════════════════════════════ -->
 <header id="site-header">
   <div class="header-inner">
-
     <a href="/de" class="logo">
       <img src="/assets/logo.png" alt="Kircherstube Barbian" class="logo-img" decoding="async">
     </a>
@@ -530,14 +451,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="main-nav">
       <a href="/de">Home</a>
       <a href="/de/wohnen">Unterkunft</a>
-      <a href="/de/kircherstube">Kircherstube</a>
+      <a href="/de/kircherstube" class="active-page">Kircherstube</a>
       <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
       <a href="/de/anfrage">Anfrage</a>
-      <a href="#buchen" class="nav-book">Buchen</a>
+      <a href="/de/buchen" class="nav-book">Buchen</a>
       <div class="lang-switch">
-        <a href="/de"    class="lang-btn active">DE</a>
-        <a href="/it"    class="lang-btn">IT</a>
-        <a href="/en"    class="lang-btn">EN</a>
+        <a href="/de/kircherstube" class="lang-btn active">DE</a>
+        <a href="/it/kircherstube" class="lang-btn">IT</a>
+        <a href="/en/kircherstube" class="lang-btn">EN</a>
       </div>
     </nav>
 
@@ -547,311 +468,212 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<!-- Mobile Nav Overlay -->
+<!-- Mobile Nav -->
 <nav class="mobile-nav" id="mobile-nav">
   <a href="/de">Home</a>
   <a href="/de/wohnen">Unterkunft</a>
-  <a href="/de/kircherstube">Kircherstube</a>
+  <a href="/de/kircherstube" style="color:var(--green);">Kircherstube</a>
   <a href="/de/freizeit-anreise">Freizeit &amp; Anreise</a>
   <a href="/de/anfrage">Anfrage</a>
-  <a href="#buchen" class="nav-book">Buchen</a>
-  <div style="display:flex;gap:8px;margin-top:12px;">
-    <a href="/de" style="font-size:13px;font-weight:600;color:var(--green);text-decoration:none;">DE</a>
-    <a href="/it" style="font-size:13px;color:var(--text-light);text-decoration:none;">IT</a>
-    <a href="/en" style="font-size:13px;color:var(--text-light);text-decoration:none;">EN</a>
+  <a href="/de/buchen" class="nav-book">Buchen</a>
+  <div class="mobile-lang">
+    <a href="/de/kircherstube" class="active">DE</a>
+    <a href="/it/kircherstube">IT</a>
+    <a href="/en/kircherstube">EN</a>
   </div>
 </nav>
 
 
 <!-- ═══════════════════════════════════════════
-     HERO
+     HERO — nur Bild, kein Text
 ═══════════════════════════════════════════ -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-
-  <div class="hero-card">
-    <!-- Pizzeria Schriftzug -->
-    <img class="hero-card-pizzeria"
-      src="/assets/pizzeria.jpg"
-      alt="Pizzeria Kircherstube"
-      decoding="async">
-
-    <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
-       class="hero-menu-btn"
-       target="_blank"
-       style="display:inline-block; background:transparent; border:1px solid var(--green); color:var(--green); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:10px 20px; margin-bottom:12px; font-family:var(--font-sans); transition:background .25s, color .25s;"
-       onmouseover="this.style.background='var(--green)';this.style.color='#fff';"
-       onmouseout="this.style.background='transparent';this.style.color='var(--green)';">
-      Pizzakarte
-    </a>
-
-    <div class="hero-card-actions">
-      <a href="/de/kircherstube#tisch-reservieren" class="hero-card-btn js-reservation-link">
-        Tisch reservieren
-      </a>
-      <a href="tel:+390471650074" class="hero-card-btn hero-card-btn-secondary">
-        Jetzt anrufen &nbsp;·&nbsp; +39 0471 650 074
-      </a>
-    </div>
-
-    <div class="hero-card-divider"></div>
-
-    <p class="hero-card-label">Willkommen in Barbian</p>
-
-    <h1 class="hero-card-h1">Der Weitblick<br><em>hoch übers Eisacktal.</em></h1>
-
-    <p class="hero-card-desc">
-      10 Minuten Fußweg vom Dorfzentrum Barbian entfernt liegt unsere Frühstückspension - Pizzeria Kircherstube.
-    </p>
-
-    <a href="/de/wohnen" class="hero-card-link">Zimmer entdecken &nbsp;→</a>
-  </div>
+  <a href="#tisch-reservieren" class="hero-reserve-cta">Tisch reservieren</a>
 </section>
 
 
 <!-- ═══════════════════════════════════════════
-     USP — Gastfreundschaft mit Seele
+     STATS BAR
 ═══════════════════════════════════════════ -->
-<section class="kircher-usp fade-in">
-  <div class="kircher-usp-inner">
-
-    <div class="kircher-usp-imgwrap">
-      <img class="kircher-usp-img"
-        src="/assets/Gemini_Generated_Image_y1b9qcy1b9qcy1b9-A4qKYkEtHM3q5O2RMaaW5A.png"
-        alt="Kircherstube Frühstück Südtirol"
-        loading="lazy" decoding="async">
-      <div class="kircher-usp-floatcard">
-        <div class="kircher-usp-floatcard-icon">🍽</div>
-        <p class="kircher-usp-floatcard-title">À la carte</p>
-        <p class="kircher-usp-floatcard-desc">Genießen Sie alpine Kulinarik direkt im Haus – von Frühstück bis Dinner.</p>
-      </div>
-    </div>
-
-    <div>
-      <p class="section-label green">Gastfreundschaft mit Seele</p>
-      <h2 class="kircher-usp-h2">Mehr als nur ein Bed &amp; Breakfast.</h2>
-      <p class="kircher-usp-body">Die Kircherstube vereint Gästehaus mit Frühstücksbuffet und Gasthaus Pizzeria-Restaurant. Ob nach einer ausgiebigen Bergwanderung oder einem gemütlichen Zusammentreffen mit der Familie, servieren wir Holzofen frische Pizza auf der Terrasse oder in unserer Stube.</p>
-      <div class="feat-grid">
-        <div>
-          <p class="feat-title">Lokal</p>
-          <p class="feat-desc">Zutaten von Bauern aus der unmittelbaren Umgebung von Barbian.</p>
-        </div>
-        <div>
-          <p class="feat-title">Echt</p>
-          <p class="feat-desc">Hausgemachte Pasta und Pizzen aus dem traditionellen Holzofen.</p>
-        </div>
-      </div>
-    </div>
-
+<div class="ke-stats fade-in">
+  <div class="ke-stat">
+    <div class="ke-stat-label">Durchgehend</div>
+    <div class="ke-stat-value">Café, Kuchen &amp; Eis</div>
   </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     ZIMMER — Wohnen mit Dolomitenblick
-═══════════════════════════════════════════ -->
-<section class="kircher-zimmer fade-in">
-  <div class="kircher-zimmer-inner">
-
-    <div class="kircher-zimmer-header">
-      <div>
-        <p class="section-label green">Unterkunft</p>
-        <h2 class="kircher-zimmer-h2">Wohnen mit Dolomitenblick.</h2>
-      </div>
-      <a class="link-underline" href="/de/wohnen">Alle Zimmer ansehen</a>
-    </div>
-
-    <div class="kircher-zimmer-grid">
-      <div class="zimmer-card">
-        <img src="/assets/gasthof-kircher-sepp-barbian-eisacktal-suedtirol-10-47jk24Av5PZkWtQeGzKP9A.webp"
-             alt="Doppelzimmer Dolomitenblick Kircherstube" loading="lazy" decoding="async">
-        <p class="zimmer-card-name">Doppelzimmer mit Balkon</p>
-        <p class="zimmer-card-feat">Balkon · Dolomitenblick · Dusche &amp; WC</p>
-        <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
-        <a href="/de/wohnen" class="zimmer-card-link">Details →</a>
-      </div>
-      <div class="zimmer-card">
-        <img src="/assets/ZimmerDZ-_Tr_HBYoycZzYAtzHTJ0GA.jpg"
-             alt="Doppelzimmer Bergwiesenblick Kircherstube" loading="lazy" decoding="async">
-        <p class="zimmer-card-name">Doppelzimmer mit Balkon</p>
-        <p class="zimmer-card-feat">Balkon · Blick ins Grüne · Dusche &amp; WC</p>
-        <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
-        <a href="/de/wohnen" class="zimmer-card-link">Details →</a>
-      </div>
-      <div class="zimmer-card">
-        <img src="/assets/gasthof-kircher-sepp-barbian-eisacktal-suedtirol-108-FVQGJMV3V_7Deq2rXBmQfA.webp"
-             alt="Doppelzimmer Kircherstube Barbian" loading="lazy" decoding="async">
-        <p class="zimmer-card-name">Doppelzimmer</p>
-        <p class="zimmer-card-feat">Gemütlich &amp; ruhig · Dusche &amp; WC</p>
-        <p class="zimmer-card-price">ab € 65 p.P./Nacht</p>
-        <a href="/de/wohnen" class="zimmer-card-link">Details →</a>
-      </div>
-    </div>
-
+  <div class="ke-stat">
+    <div class="ke-stat-label">Ruhetag</div>
+    <div class="ke-stat-value red">Jeden Dienstag</div>
   </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     RESTAURANT — Pizzeria & Gasthaus
-═══════════════════════════════════════════ -->
-<section class="kircher-restaurant fade-in">
-  <div class="kircher-restaurant-inner">
-    <div>
-      <p class="section-label light">Kulinarik &amp; Genuss</p>
-      <h2 class="kircher-restaurant-h2">Kircherstube Pizzeria &amp; Gasthaus.</h2>
-      <p class="kircher-restaurant-body">In unserer gemütlichen Stube oder auf unserer überdachten Terrasse servieren wir Südtiroler Spezialitäten, knusprige Holzofen-Pizza, hausgemachte Schlutzer und Weine aus der Region.</p>
-      <div style="display:flex; gap:12px; margin-bottom:32px; flex-wrap:wrap;">
-        <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
-           target="_blank"
-           style="display:inline-block; border:1px solid var(--green-light); color:#F7F3EE; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans);">
-          Pizzakarte
-        </a>
-        <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_speisekarte.pdf"
-           target="_blank"
-           style="display:inline-block; border:1px solid var(--green-light); color:#F7F3EE; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans);">
-          Speisekarte
-        </a>
-        <a href="/de/kircherstube#tisch-reservieren"
-           class="js-reservation-link"
-           style="display:inline-block; background:var(--green-btn); border:1px solid var(--green-btn); color:#fff; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans);">
-          Tisch reservieren
-        </a>
-      </div>
-      <div class="kircher-restaurant-info">
-        <div>
-          <p class="info-label">Öffnungszeiten</p>
-          <p class="info-body">
-            Mo, Mi–So<br>
-            Durchgehend geöffnet<br>
-            <span class="info-sub">Frühstück 08:00–10:00</span><br>
-            <span class="info-sub">Pizzeria 16:00–21:45</span><br>
-            <span class="info-rest">Dienstag: Ruhetag</span>
-          </p>
-        </div>
-        <div>
-          <p class="info-label">Reservierung</p>
-          <p class="info-body">
-            <a href="tel:+390471650074" style="color:inherit;text-decoration:none;">+39 0471 650 074</a><br>
-            <a href="mailto:info@kircherstube.it" style="color:inherit;text-decoration:none;">info@kircherstube.it</a>
-          </p>
-        </div>
-      </div>
-    </div>
-    <div>
-      <img class="kircher-restaurant-img"
-        src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png"
-        alt="Kircherstube Restaurant Pizzeria Barbian"
-        loading="lazy" decoding="async">
-    </div>
+  <div class="ke-stat">
+    <div class="ke-stat-label">Pizzeria</div>
+    <div class="ke-stat-value">16:00 – 21:45 Uhr</div>
   </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     TERRASSE — Abendessen mit Aussicht
-═══════════════════════════════════════════ -->
-<section class="kircher-terrasse fade-in">
-  <div class="kircher-terrasse-inner">
-    <div>
-      <img class="kircher-terrasse-img"
-        src="/assets/Gemini_Generated_Image_cse9upcse9upcse9-oh1YLHUcPIrGWa2vnPbQcA.png"
-        alt="Terrasse Kircherstube Abend Südtirol"
-        loading="lazy" decoding="async">
-    </div>
-    <div>
-      <h2 class="kircher-terrasse-h2">Abendessen mit Aussicht.</h2>
-      <p class="kircher-terrasse-body">Unsere Terrasse ist das Herzstück des Hauses. Wenn die Sonne hinter den Gipfeln versinkt und das Tal in ein tiefes Blau taucht, schmeckt ein Glas Südtiroler Lagrein hier am besten.</p>
-      <div class="check-list">
-        <div class="check-item">
-          <span class="check-icon">✓</span>
-          <p class="check-text">Panoramablick auf die Grödner Dolomiten</p>
-        </div>
-        <div class="check-item">
-          <span class="check-icon">✓</span>
-          <p class="check-text">Windgeschützt &amp; beheizbar an kühlen Abenden</p>
-        </div>
-      </div>
-      <a href="/de/kircherstube#tisch-reservieren" class="btn-outline js-reservation-link">Tisch reservieren</a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     REVIEWS — Gästestimmen
-═══════════════════════════════════════════ -->
-<section class="kircher-reviews fade-in">
-  <div class="kircher-reviews-inner">
-
-    <div class="kircher-reviews-header">
-      <p class="section-label light">Gästestimmen</p>
-      <h2 class="kircher-reviews-h2">Das sagen unsere Gäste.</h2>
-      <div class="kircher-badges">
-        <div class="kircher-badge">
-          <div class="badge-logo booking"><p>booking.com</p></div>
-          <div>
-            <p class="badge-score">8,4</p>
-            <p class="badge-sublabel">Sehr gut</p>
-          </div>
-        </div>
-        <div class="badge-divider"></div>
-        <div class="kircher-badge">
-          <div class="badge-logo google"><p>G</p></div>
-          <div>
-            <p class="badge-score">4,4 / 5</p>
-            <p class="badge-sublabel">Google Reviews</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="kircher-reviews-grid">
-      <div class="review-card">
-        <p class="review-quote">"</p>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Supertolle Pension mit gemütlichen Zimmern und sensationeller Aussicht! Das Frühstücksbuffet ist ausgiebig und das Abendessen fantastisch. Die Gastgeberinnen sind überaus patent, warmherzig und sehr freundlich. Auch Hunde finden hier ein gut umsorgtes Urlaubszuhause.</p>
-        <div class="review-divider">
-          <p class="review-name">Katja</p>
-          <p class="review-source">Booking.com · 5/5</p>
-        </div>
-      </div>
-      <div class="review-card">
-        <p class="review-quote">"</p>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Ein absolutes Highlight unseres Südtirol-Urlaubs. Die Aussicht von der Terrasse bei Sonnenuntergang ist unvergesslich. Frühstück mit regionalen Produkten, das Zimmer ruhig und gemütlich — wir kommen definitiv wieder.</p>
-        <div class="review-divider">
-          <p class="review-name">Markus &amp; Sandra</p>
-          <p class="review-source">Google · 5/5</p>
-        </div>
-      </div>
-      <div class="review-card">
-        <p class="review-quote">"</p>
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Herzliche Gastgeber, traumhafte Lage über dem Eisacktal und eine Pizza die man so nur in Südtirol findet. Barbian ist ein kleines Juwel — und die Kircherstube mittendrin das Herzstück des Dorfes.</p>
-        <div class="review-divider">
-          <p class="review-name">Thomas R.</p>
-          <p class="review-source">Google · 4/5</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════════
-     GOOGLE MAP
-═══════════════════════════════════════════ -->
-<div class="kircher-map">
-  <iframe
-    src="https://maps.google.com/maps?q=Kircherstube+Barbian+Südtirol+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed"
-    allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-    title="Kircherstube Barbian auf Google Maps">
-  </iframe>
 </div>
+
+
+<!-- ═══════════════════════════════════════════
+     HOLZOFENPIZZA
+═══════════════════════════════════════════ -->
+<section class="ke-pizza fade-in">
+  <div class="ke-pizza-text">
+    <span class="overline">Ofenwarm &amp; Knusprig</span>
+    <h2>Holzofenpizza</h2>
+    <p>Frische Zutaten direkt von den Bergbauern in nächster Umgebung.</p>
+    <a href="#tisch-reservieren">Tisch reservieren</a>
+
+    <div style="display:flex; gap:12px; margin-top:24px; flex-wrap:wrap;">
+      <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_pizzakarte.pdf"
+         target="_blank"
+         style="display:inline-block; background:var(--green-btn); color:#fff; font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans); transition:background .25s;">
+        Pizzakarte
+      </a>
+      <a href="https://cdn.jsdelivr.net/gh/manusiri05/wb-kircherstube@main/kircher_speisekarte.pdf"
+         target="_blank"
+         style="display:inline-block; background:transparent; border:1px solid var(--green-btn); color:var(--green-btn); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:12px 24px; font-family:var(--font-sans); transition:background .25s, color .25s;">
+        Speisekarte
+      </a>
+    </div>
+  </div>
+  <div class="ke-pizza-imgs">
+    <img src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png" alt="Kircherstube Pizza" loading="lazy" decoding="async">
+    <img src="/assets/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.png" alt="Pizzaiolo" loading="lazy" decoding="async">
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TERRASSE — EIS, KAFFEE & DOLOMITENBLICK
+═══════════════════════════════════════════ -->
+<section class="ke-terrasse fade-in">
+  <h2>Eis, Kaffee &amp; <em>Dolomitenblick.</em></h2>
+  <span class="sub">Panorama-Terrasse über dem Eisacktal</span>
+  <div class="ke-terrasse-grid">
+    <div class="ke-terrasse-card">
+      <img src="/assets/hero_kircherstube.webp" alt="Panorama Terrasse" loading="lazy" decoding="async">
+      <div class="ke-terrasse-card-label">
+        <h3>Die Panorama-Terrasse</h3>
+        <p>Der Logenplatz über dem Eisacktal.</p>
+      </div>
+    </div>
+    <div class="ke-terrasse-card">
+      <img src="/assets/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.png" alt="Hausgemachtes Eis" loading="lazy" decoding="async">
+      <div class="ke-terrasse-card-label">
+        <h3>Hausgemachtes Eis</h3>
+        <p>Cremige Vielfalt aus Südtiroler Milch.</p>
+      </div>
+    </div>
+    <div class="ke-terrasse-card">
+      <img src="/assets/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.png" alt="Barista Kultur" loading="lazy" decoding="async">
+      <div class="ke-terrasse-card-label">
+        <h3>Barista Kultur</h3>
+        <p>Italienischer Espresso am Berghang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TÖRGGELEN
+═══════════════════════════════════════════ -->
+<section class="ke-toerg fade-in">
+  <div class="ke-toerg-inner">
+    <div>
+      <span class="ke-toerg-badge">Herbst Highlight</span>
+      <h2>Zeit zum Törggelen.</h2>
+      <p>Schlachtplatte und geröstete Kastanien. Wenn sich die Blätter verfärben, wird es in der Kircherstube besonders gesellig.</p>
+      <div class="ke-toerg-cols">
+        <div class="ke-toerg-col">
+          <h4>Traditionelle Kost</h4>
+          <p>Hausgemachte Schlutzkrapfen, Surfeisch und Kraut.</p>
+        </div>
+        <div class="ke-toerg-col">
+          <h4>Neuer Wein</h4>
+          <p>Frisch gepresster Süßmost und junger Südtiroler Wein.</p>
+        </div>
+      </div>
+      <a href="#tisch-reservieren" class="ke-toerg-btn">Tisch reservieren</a>
+    </div>
+    <div>
+      <img src="/assets/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy" decoding="async">
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     KONTAKT
+═══════════════════════════════════════════ -->
+<section class="ke-kontakt fade-in">
+  <div class="ke-kontakt-inner">
+    <div>
+      <h2>Finden Sie uns.</h2>
+      <div class="ke-kontakt-info">
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p>Rosengartenstraße 27<br>39040 Barbian, Südtirol</p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p><a href="tel:+390471650074">+39 0471 650 074</a></p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p><a href="mailto:info@kircherstube.it">info@kircherstube.it</a></p>
+        </div>
+        <div class="ke-kontakt-row">
+          <span class="icon">—</span>
+          <p>Durchgehend geöffnet 08:00–21:45<br>
+          <span style="color:#E8635A;">Dienstag: Ruhetag</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="ke-kontakt-map-wrap">
+      <iframe
+        src="https://maps.google.com/maps?q=Kircherstube+Barbian+Südtirol+Italy&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Kircherstube Barbian auf Google Maps">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TISCHRESERVIERUNG
+═══════════════════════════════════════════ -->
+<section class="reservation-section" id="tisch-reservieren">
+  <div class="reservation-inner">
+    <div class="reservation-copy">
+      <p class="reservation-label">Online reservieren</p>
+      <h2 class="reservation-title">Ihr Tisch in der Kircherstube.</h2>
+      <p class="reservation-text">Wählen Sie Datum, Uhrzeit und Personenzahl direkt online aus. Die verfügbaren Termine werden Ihnen sofort angezeigt.</p>
+    </div>
+    <div id="convito-widget"></div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var p = new URLSearchParams(window.location.search);
+  var keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid"];
+  var q = keys.filter(function (k) { return p.get(k); })
+    .map(function (k) { return k + "=" + encodeURIComponent(p.get(k)); }).join("&");
+  var f = document.createElement("iframe");
+  f.src = "https://app.convito.eu/w/kircherstube" + (q ? "?" + q : "");
+  f.style.cssText = "width:100%;max-width:600px;height:640px;border:0;border-radius:16px";
+  f.title = "Tisch reservieren";
+  document.getElementById("convito-widget").appendChild(f);
+  window.addEventListener("message", function (e) {
+    if (e && e.data && e.data.type === "convito-height" && e.data.height) {
+      f.style.height = e.data.height + "px";
+    }
+  });
+})();
+</script>
 
 
 <!-- ═══════════════════════════════════════════
@@ -860,15 +682,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer id="footer">
   <div class="footer-grid">
 
-    <!-- Logo + Beschreibung -->
     <div>
-      <a href="/de" class="footer-logo-wrap" style="display:inline-block; margin-bottom:18px;">
+      <a href="/de" class="footer-logo-wrap">
         <img src="/assets/logo.png" alt="Kircherstube Barbian" class="footer-logo-img" loading="lazy" decoding="async">
       </a>
       <p class="footer-desc">Traditionelle Südtiroler Gastfreundschaft hoch über dem Eisacktal. Gasthof &amp; Pizzeria in Barbian.</p>
     </div>
 
-    <!-- Öffnungszeiten -->
     <div class="footer-col">
       <p class="footer-col-label">Öffnungszeiten</p>
       <p>
@@ -880,7 +700,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
     </div>
 
-    <!-- Kontakt -->
     <div class="footer-col">
       <p class="footer-col-label">Kontakt</p>
       <p>
@@ -892,14 +711,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
     </div>
 
-    <!-- Rechtliches -->
     <div class="footer-col">
       <p class="footer-col-label">Rechtliches</p>
       <p>
         MwSt-Nr.: IT 01193170212<br>
         CIN: ITO21007A1Y92M2ERT
       </p>
-      <a href="/de/impressum"  class="footer-legal-link">Impressum</a>
+      <a href="/de/impressum"   class="footer-legal-link">Impressum</a>
       <a href="/de/datenschutz" class="footer-legal-link">Datenschutz</a>
     </div>
 
@@ -919,15 +737,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      SCRIPTS
 ═══════════════════════════════════════════ -->
 <script>
-  /* ── Header: scroll-state ── */
+  /* ── Header scroll ── */
   const header = document.getElementById('site-header');
   const updateHeader = () => header.classList.toggle('scrolled', window.scrollY > 40);
   window.addEventListener('scroll', updateHeader, { passive: true });
   updateHeader();
 
-  /* ── Hamburger / Mobile Nav ── */
-  const hamburger  = document.getElementById('hamburger');
-  const mobileNav  = document.getElementById('mobile-nav');
+  /* ── Hamburger ── */
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
   hamburger.addEventListener('click', () => {
     const open = mobileNav.classList.toggle('open');
     hamburger.setAttribute('aria-expanded', open);
@@ -936,27 +754,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     a.addEventListener('click', () => mobileNav.classList.remove('open'))
   );
 
-  /* ── Fade-in on scroll ── */
+  /* ── Fade-in ── */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => io.observe(el));
-
-  /* Tracking-Parameter bis zum Reservierungswidget mitnehmen */
-  const trackingKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
-  const currentParams = new URLSearchParams(window.location.search);
-  document.querySelectorAll('.js-reservation-link').forEach(link => {
-    const target = new URL(link.href, window.location.href);
-    trackingKeys.forEach(key => {
-      if (currentParams.get(key)) target.searchParams.set(key, currentParams.get(key));
-    });
-    link.href = target.pathname + target.search + target.hash;
-  });
 </script>
-
-<!-- ↓↓↓ Booking Widget Script hier einfügen (vor </body>) ↓↓↓ -->
 
 </body>
 </html>
