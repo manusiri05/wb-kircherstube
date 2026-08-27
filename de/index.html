@@ -162,13 +162,20 @@
       position: absolute; inset: 0;
       background: linear-gradient(to bottom, rgba(0,0,0,.18) 0%, rgba(0,0,0,.08) 60%, rgba(0,0,0,0) 100%);
     }
-    .hero-reserve-cta {
+    .hero-ctas {
       position: absolute; z-index: 2; right: max(40px, calc((100vw - var(--max-w)) / 2)); bottom: 40px;
-      display: inline-block; background: var(--green-btn); color: var(--white);
+      display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 12px;
+    }
+    .hero-reserve-cta,
+    .hero-call-cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--green-btn); color: var(--white);
       padding: 15px 28px; font-size: 12px; font-weight: 600; letter-spacing: 2px;
       text-transform: uppercase; text-decoration: none; transition: background .25s;
     }
     .hero-reserve-cta:hover { background: var(--green); }
+    .hero-call-cta { background: rgba(255,255,255,.94); color: var(--green-btn); border: 1px solid var(--white); }
+    .hero-call-cta:hover { background: var(--white); color: var(--green); }
 
     /* ═══════════════════════════════════════════
        KE-STATS
@@ -427,7 +434,8 @@
     }
     @media (max-width: 480px) {
       :root { --pad: 48px 20px; }
-      .hero-reserve-cta { right: 20px; left: 20px; bottom: 24px; text-align: center; }
+      .hero-ctas { right: 20px; left: 20px; bottom: 24px; flex-direction: column; }
+      .hero-reserve-cta, .hero-call-cta { width: 100%; }
     }
   </style>
 </head>
@@ -490,7 +498,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
-  <a href="#tisch-reservieren" class="hero-reserve-cta">Tisch reservieren</a>
+  <div class="hero-ctas">
+    <a href="#tisch-reservieren" class="hero-reserve-cta">Tisch reservieren</a>
+    <a href="tel:00390471650074" class="hero-call-cta">Direkt anrufen</a>
+  </div>
 </section>
 
 
@@ -537,8 +548,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
   <div class="ke-pizza-imgs">
-    <img src="/assets/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.png" alt="Kircherstube Pizza" loading="lazy" decoding="async">
-    <img src="/assets/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.png" alt="Pizzaiolo" loading="lazy" decoding="async">
+    <img src="/assets/optimized/Gemini_Generated_Image_e24dj9e24dj9e24d-BUxz3nsd1iB_ej8IYptYRg.jpg" alt="Kircherstube Pizza" loading="lazy" decoding="async">
+    <img src="/assets/optimized/Gemini_Generated_Image_2pexkj2pexkj2pex-j85ZNVxvFqqdHj2zb3bPEA.jpg" alt="Pizzaiolo" loading="lazy" decoding="async">
   </div>
 </section>
 
@@ -558,14 +569,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="ke-terrasse-card">
-      <img src="/assets/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.png" alt="Hausgemachtes Eis" loading="lazy" decoding="async">
+      <img src="/assets/optimized/Gemini_Generated_Image_y151qy151qy151qy-_gXh7ZyxcvnWy6975lizeQ.jpg" alt="Hausgemachtes Eis" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Hausgemachtes Eis</h3>
         <p>Cremige Vielfalt aus Südtiroler Milch.</p>
       </div>
     </div>
     <div class="ke-terrasse-card">
-      <img src="/assets/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.png" alt="Barista Kultur" loading="lazy" decoding="async">
+      <img src="/assets/optimized/Gemini_Generated_Image_bsd5j5bsd5j5bsd5-U4xLTYpLeAG1-Olgol5e6w.jpg" alt="Barista Kultur" loading="lazy" decoding="async">
       <div class="ke-terrasse-card-label">
         <h3>Barista Kultur</h3>
         <p>Italienischer Espresso am Berghang.</p>
@@ -597,7 +608,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#tisch-reservieren" class="ke-toerg-btn">Tisch reservieren</a>
     </div>
     <div>
-      <img src="/assets/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy" decoding="async">
+      <img src="/assets/optimized/IDMSuedtirol-ManuelFerrigato3-S5iu3gntL0Odto-ueD7RMw.jpg" alt="Törggelen in der Kircherstube" style="width:100%; height:400px; object-fit:cover; display:block;" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
